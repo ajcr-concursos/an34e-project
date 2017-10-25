@@ -16,8 +16,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author André Rodrigues
  */
-@WebServlet(urlPatterns = {"/Inicio"})
-public class Inicio extends HttpServlet {
+@WebServlet(urlPatterns = {"/Login"})
+public class Login extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,7 +32,6 @@ public class Inicio extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("    <head>");
@@ -46,7 +45,7 @@ public class Inicio extends HttpServlet {
             out.println("            <div class=\"container-fluid\">");
             out.println("                <div class=\"navbar-header\">");
             out.println("                    <div class=\"navbar-brand\">");
-            out.println("                        <a href=\"./Index\">AJCR Concursos</a>");
+            out.println("                        <a href=\"Index.html\">AJCR Concursos</a>");
             out.println("                    </div>");
             out.println("                </div>");
             out.println("                <ul class=\"nav navbar-nav\">");
@@ -78,37 +77,88 @@ public class Inicio extends HttpServlet {
             out.println("                                Login");
             out.println("                            </a>                      ");
             out.println("                        </li>");
+            out.println("");
             out.println("                    </ul>");
             out.println("                </ul>");
-            out.println("                ");
+            out.println("");
             out.println("            </div>");
             out.println("");
             out.println("        </nav>");
-            out.println("        <div class=\"jumbotron text-center\">");
-            out.println("            <h1>Sistema Gerenciador de concursos</h1>");
-            out.println("            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>");
-            out.println("        </div>");
+            out.println("        <div class=\"row\">");
+            out.println("            ");
+            out.println("            <div class=\"col-lg-6\"> ");
+            out.println("                <div class=\"row\">");
+            out.println("                    <h2 class=\"text-center col-sm-10\">Login</h2>");
+            out.println("                </div>");
+            out.println("                <form class=\"form-horizontal\">");
+            out.println("                  <div class=\"form-group\">");
+            out.println("                    <label for=\"txtEmail\" class=\"col-sm-2 control-label\">Email</label>");
+            out.println("                    <div class=\"col-sm-10\">");
+            out.println("                      <input type=\"email\" class=\"form-control\" id=\"txtEmail\" placeholder=\"Email\">");
+            out.println("                    </div>");
+            out.println("                  </div>");
+            out.println("                  <div class=\"form-group\">");
+            out.println("                    <label for=\"txtSenha\" class=\"col-sm-2 control-label\">Senha</label>");
+            out.println("                    <div class=\"col-sm-10\">");
+            out.println("                      <input type=\"password\" class=\"form-control\" id=\"txtSenha\" placeholder=\"Senha\">");
+            out.println("                    </div>");
+            out.println("                  </div>");
+            out.println("                  <div class=\"form-group\">");
+            out.println("                    <div class=\"col-sm-offset-2 col-sm-10\">");
+            out.println("                      <div class=\"checkbox\">");
+            out.println("                        <label>");
+            out.println("                          <input type=\"checkbox\"> Lembrar-me");
+            out.println("                        </label>");
+            out.println("                      </div>");
+            out.println("                    </div>");
+            out.println("                  </div>");
+            out.println("                  <div class=\"form-group\">");
+            out.println("                    <div class=\"col-sm-offset-2 col-sm-10\">");
+            out.println("                      <button type=\"submit\" class=\"btn btn-default\">Entrar</button>");
+            out.println("                    </div>");
+            out.println("                  </div>");
+            out.println("                </form>");
+            out.println("            </div>");
+            out.println("            <div class=\"col-lg-6\">");
+            out.println("                <div class=\"row\">");
+            out.println("                    <h2 class=\"text-center col-sm-10\">Cadastro</h2>");
+            out.println("                </div>");
+            out.println("                <form class=\"form-horizontal\">");
+            out.println("                    <div class=\"form-group\">");
+            out.println("                        <label for=\"txtNomeCadastro\" class=\"col-sm-2 control-label\">Nome</label>");
+            out.println("                        <div class=\"col-sm-10\">");
+            out.println("                            <input type=\"text\" class=\"form-control\" id=\"txtNomeCadastro\" placeholder=\"Nome\">");
+            out.println("                        </div>                       ");
+            out.println("                    </div>");
+            out.println("                    <div class=\"form-group\">");
+            out.println("                        <label for=\"txtEmailCadastro\" class=\"col-sm-2 control-label\">Email</label>");
+            out.println("                        <div class=\"col-sm-10\">");
+            out.println("                          <input type=\"email\" class=\"form-control\" id=\"txtEmailCadastro\" placeholder=\"Email\">");
+            out.println("                        </div>");
+            out.println("                    </div>");
+            out.println("                    <div class=\"form-group\">");
+            out.println("                        <label for=\"txtSenhaCadastro\" class=\"col-sm-2 control-label\">Senha</label>");
+            out.println("                        <div class=\"col-sm-10\">");
+            out.println("                          <input type=\"password\" class=\"form-control\" id=\"txtSenhaCadastro\" placeholder=\"Senha\">");
+            out.println("                        </div>");
+            out.println("                    </div>");
+            out.println("                    <div class=\"form-group\">");
+            out.println("                        <label for=\"txtSenha\" class=\"col-sm-2 control-label\">Repita a senha</label>");
+            out.println("                        <div class=\"col-sm-10\">");
+            out.println("                            <input type=\"password\" class=\"form-control\" id=\"txtEmail\" placeholder=\"Repita a senha\">");
+            out.println("                        </div>                       ");
+            out.println("                    </div>");
             out.println("");
-            out.println("        <div class=\"container\">");
-            out.println("            <div class=\"row\">");
-            out.println("                <div class=\"col-sm-4\">");
-            out.println("                    <h3>Column 1</h3>");
-            out.println("                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>");
-            out.println("                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>");
-            out.println("                </div>");
-            out.println("                <div class=\"col-sm-4\">");
-            out.println("                    <h3>Column 2</h3>");
-            out.println("                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>");
-            out.println("                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>");
-            out.println("                </div>");
-            out.println("                <div class=\"col-sm-4\">");
-            out.println("                    <h3>Column 3</h3>");
-            out.println("                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>");
-            out.println("                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>");
-            out.println("                </div>");
+            out.println("");
+            out.println("");
+            out.println("                  <div class=\"form-group\">");
+            out.println("                    <div class=\"col-sm-offset-2 col-sm-10\">");
+            out.println("                      <button type=\"submit\" class=\"btn btn-default\">Cadastrar</button>");
+            out.println("                    </div>");
+            out.println("                  </div>");
+            out.println("                </form>");
             out.println("            </div>");
             out.println("        </div>");
-            out.println("");
             out.println("        <footer class=\"footer bd-footer\">");
             out.println("            <div class=\"container\">");
             out.println("                <p class=\"text-center\">AJCR Concursos ®</p>");
