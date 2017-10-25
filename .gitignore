@@ -1,0 +1,14 @@
+
+# Created by https://www.gitignore.io/api/netbeans
+
+### NetBeans ###
+code/gerenciador-concursos/nbproject/private/
+code/gerenciador-concursos/build/
+code/gerenciador-concursos/nbbuild/
+code/gerenciador-concursos/dist/
+code/gerenciador-concursos/nbdist/
+code/gerenciador-concursos/.nb-gradle/
+code/gerenciador-concursos/web/META-INF
+code/gerenciador-concursos/web/WEB-INF
+code/gerenciador-concurso/build.xml
+# End of https://www.gitignore.io/api/netbeans
