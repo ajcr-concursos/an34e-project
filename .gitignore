@@ -2,7 +2,7 @@
 # Created by https://www.gitignore.io/api/netbeans
 
 ### NetBeans ###
-code/gerenciador-concursos/nbproject/private/
+code/gerenciador-concursos/nbproject
 code/gerenciador-concursos/build/
 code/gerenciador-concursos/nbbuild/
 code/gerenciador-concursos/dist/
