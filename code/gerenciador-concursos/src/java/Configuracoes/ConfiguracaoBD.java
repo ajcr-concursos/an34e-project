@@ -11,7 +11,7 @@ package Configuracoes;
  */
 public class ConfiguracaoBD {
     public static final String USUARIO = "";
-    private static final String SENHA = "";
-    private static final String URL = "";
-    private static final String DRIVER = "";
+    public static final String SENHA = "";
+    public static final String URL = "";
+    public static final String DRIVER = "";
 }
