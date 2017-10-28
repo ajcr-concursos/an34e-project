@@ -1,0 +1,61 @@
+﻿html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+ 
+  margin-bottom: 60px;
+  overflow-x: hidden;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 60px;
+  background-color: #222;
+  color: #FFF;
+}
+
+label{
+	display: block;
+}
+input,textarea{
+    max-width: 70%;
+}
+.container-fluid{
+	padding-right:0 !important;
+	padding-left:0!important;
+}
+.navbar{
+    border-radius: 0px;
+}
+.container .formulario{
+	padding: 200px 200px 200px 200px;
+}
+
+/*.par{
+	background-color: grey;
+}
+.impar{
+	background-color: green;
+}*/
+#popup{
+	margin-left: 7%;
+
+	position: fixed;
+	max-height: 50%;
+	display: block;
+	z-index: 1;
+
+}
+.colaboradores{
+    display: block;
+    cursor: pointer;
+}
+
+.colaboradores:hover{
+    background-color: #efe3e3;
+}
+.glyphicon-remove{
+    cursor:pointer;
+}
