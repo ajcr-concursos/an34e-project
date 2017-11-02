@@ -46,7 +46,7 @@
                 <ul class="nav navbar-nav">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="nav-registration">
-                            <a href="Login.html">
+                            <a href="./Login">
                                 Login
                             </a>                      
                         </li>
@@ -64,7 +64,7 @@
         <div class="container">
             <div class="row"> 
                 <div class="col-sm-4">
-                    <h3>${param.nome}</h3>
+                    <h3>${nome}</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
                     <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
                 </div>
