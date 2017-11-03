@@ -11,9 +11,8 @@ body {
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 60px;
-  background-color: #222;
-  color: #FFF;
+  height: 30px;
+  color: black;
 }
 
 label{
@@ -27,7 +26,8 @@ input,textarea{
 	padding-left:0!important;
 }
 .navbar{
-    border-radius: 0px;
+	width: 101%;
+	right: 5px;
 }
 .container .formulario{
 	padding: 200px 200px 200px 200px;
