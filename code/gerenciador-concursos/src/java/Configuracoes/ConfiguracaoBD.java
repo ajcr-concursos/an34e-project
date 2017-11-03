@@ -10,8 +10,8 @@ package Configuracoes;
  * @author André Rodrigues
  */
 public class ConfiguracaoBD {
-    public static final String USUARIO = "";
-    public static final String SENHA = "";
-    public static final String URL = "";
-    public static final String DRIVER = "";
+    public static final String USUARIO = "root";
+    public static final String SENHA = "abzdwe123";
+    public static final String URL = "jdbc:mysql://127.0.0.1:3306/gerenciaconcurso";
+    public static final String DRIVER = "com.mysql.jdbc.Driver";
 }

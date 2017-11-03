@@ -1,3 +1,10 @@
+<%-- 
+    Document   : Login
+    Created on : 02/11/2017, 15:28:33
+    Author     : André Rodrigues
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -39,7 +46,7 @@
                 <ul class="nav navbar-nav">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="nav-registration">
-                            <a href="">
+                            <a href="./Login">
                                 Login
                             </a>                      
                         </li>
@@ -51,77 +58,80 @@
 
         </nav>
         <div class="row">
-            
+
             <div class="col-lg-6"> 
                 <div class="row">
                     <h2 class="text-center col-sm-10">Login</h2>
                 </div>
-                <form class="form-horizontal">
-                  <div class="form-group">
-                    <label for="txtEmail" class="col-sm-2 control-label">Email</label>
-                    <div class="col-sm-10">
-                      <input type="email" class="form-control" id="txtEmail" placeholder="Email">
+                <form class="form-horizontal" action="./ValidaLogin" method="POST">
+                    <div class="form-group">
+                        <label for="txtEmail" class="col-sm-2 control-label">Email</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" name="txtEmail" placeholder="Email">
+                        </div>
                     </div>
-                  </div>
-                  <div class="form-group">
-                    <label for="txtSenha" class="col-sm-2 control-label">Senha</label>
-                    <div class="col-sm-10">
-                      <input type="password" class="form-control" id="txtSenha" placeholder="Senha">
+                    <div class="form-group">
+                        <label for="txtSenha" class="col-sm-2 control-label">Senha</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" name="txtSenha" placeholder="Senha">
+                        </div>
                     </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                      <div class="checkbox">
-                        <label>
-                          <input type="checkbox"> Lembrar-me
-                        </label>
-                      </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Lembrar-me
+                                </label>
+                            </div>
+                        </div>
                     </div>
-                  </div>
-                  <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                      <button type="submit" class="btn btn-default">Entrar</button>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <input type="submit" class="btn btn-default" value="Entrar"/>
+                        </div>
                     </div>
-                  </div>
                 </form>
             </div>
             <div class="col-lg-6">
                 <div class="row">
                     <h2 class="text-center col-sm-10">Cadastro</h2>
                 </div>
-                <form class="form-horizontal">
+                <form class="form-horizontal" action="./ValidaCadastro" method="POST">
                     <div class="form-group">
                         <label for="txtNomeCadastro" class="col-sm-2 control-label">Nome</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="txtNomeCadastro" placeholder="Nome">
+                            <input type="text" class="form-control" name="txtNomeCadastro" placeholder="Nome">
                         </div>                       
                     </div>
                     <div class="form-group">
                         <label for="txtEmailCadastro" class="col-sm-2 control-label">Email</label>
                         <div class="col-sm-10">
-                          <input type="email" class="form-control" id="txtEmailCadastro" placeholder="Email">
+                            <input type="email" class="form-control" name="txtEmailCadastro" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtEmailCadastro" class="col-sm-2 control-label">CPF</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="txtCPFCadastro">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="txtSenhaCadastro" class="col-sm-2 control-label">Senha</label>
                         <div class="col-sm-10">
-                          <input type="password" class="form-control" id="txtSenhaCadastro" placeholder="Senha">
+                            <input type="password" class="form-control" name="txtSenhaCadastro" placeholder="Senha">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="txtSenha" class="col-sm-2 control-label">Repita a senha</label>
                         <div class="col-sm-10">
-                            <input type="password" class="form-control" id="txtEmail" placeholder="Repita a senha">
+                            <input type="password" class="form-control" name="txtConfirmaSenhaCadastro" placeholder="Repita a senha">
                         </div>                       
                     </div>
-
-
-
-                  <div class="form-group">
-                    <div class="col-sm-offset-2 col-sm-10">
-                      <button type="submit" class="btn btn-default">Cadastrar</button>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <input type="submit" class="btn btn-default" value="Cadastrar">
+                        </div>
                     </div>
-                  </div>
                 </form>
             </div>
         </div>

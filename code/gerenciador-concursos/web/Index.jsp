@@ -1,10 +1,17 @@
+<%-- 
+    Document   : newjsp
+    Created on : 29/10/2017, 02:21:00
+    Author     : Aluno
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-        <title>	</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
-        <meta charset="utf-8">
     </head>
     <body>
         <nav class="navbar navbar-inverse">
@@ -39,13 +46,13 @@
                 <ul class="nav navbar-nav">
                     <ul class="nav navbar-nav navbar-right">
                         <li class="nav-registration">
-                            <a href="Login.html">
+                            <a href="./Login">
                                 Login
                             </a>                      
                         </li>
                     </ul>
                 </ul>
-                
+
             </div>
 
         </nav>
@@ -55,10 +62,16 @@
         </div>
 
         <div class="container">
-            <div class="row">
+            <div class="row"> 
                 <div class="col-sm-4">
+<<<<<<< HEAD:code/gerenciador-concursos/web/Index.html
                     <h3>Concurso 1</h3>
                     <p>Aqui concurso mais acessado na área de interesse do usuário</p>
+=======
+                    <h3>${nome}</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+>>>>>>> e338cf32935c44e85020821ec61667872634cf7f:code/gerenciador-concursos/web/Index.jsp
                 </div>
                 <div class="col-sm-4">
                     <h3>Empresa 1</h3>

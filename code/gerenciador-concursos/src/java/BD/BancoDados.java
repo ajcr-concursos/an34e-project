@@ -27,10 +27,15 @@ public class BancoDados {
     private String DRIVER = ConfiguracaoBD.DRIVER;
     private Connection con;
     
-    public Connection abrir() throws Exception {
-        Class.forName(DRIVER);
-        this.con = DriverManager.getConnection(URL, USUARIO, SENHA);
-        return con;
+    public Connection getConnection()  {
+        try {
+            Class.forName(DRIVER);
+            this.con = DriverManager.getConnection(URL, USUARIO, SENHA);
+            return con;
+        } catch (Exception ex) {
+            Logger.getLogger(BancoDados.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
     }
     
     public void fecharConexao() {
@@ -41,14 +46,5 @@ public class BancoDados {
         } catch (SQLException ex) {
             Logger.getLogger(BancoDados.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }
-    public ResultSet select(String sql) throws SQLException{
-        Statement st = this.con.createStatement();
-        return st.executeQuery(sql);
-    }
-    
-    public int insert(String sql) throws SQLException{
-        Statement st = this.con.createStatement();
-        return st.executeUpdate(sql);
     }
 }
