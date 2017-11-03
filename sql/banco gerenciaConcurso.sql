@@ -1,31 +1,35 @@
-CREATE DATABASE GERENCIACONCURSO;
+create database gerenciaconcurso;
 use gerenciaconcurso;
-CREATE TABLE CANDIDATO(
-	ID INT AUTO_INCREMENT primary key,
-	NOME VARCHAR(45) NOT NULL,
-	CPF VARCHAR(11) UNIQUE NOT NULL,
-	DATA_NASCIMENTO DATE
+create table candidato(
+	id int auto_increment primary key,
+	nome varchar(45) not null,
+	email varchar(45) unique not null,
+	senha varchar(20) not null,
+	cpf varchar(11) unique not null,
+	data_nascimento date
 );
 
-CREATE TABLE AREA (
-	ID INT AUTO_INCREMENT PRIMARY KEY,
-	NOME VARCHAR(45) NOT NULL
+create table area (
+	id int auto_increment primary key,
+	nome varchar(45) not null
 );
 
-CREATE TABLE AREA_CANDIDATO(
-	ID_CANDIDATO INT,
-	ID_area int,
-	primary key (ID_CANDIDATO,ID_AREA),
-	FOREIGN KEY (ID_CANDIDATO) REFERENCES CANDIDATO(ID),
-	FOREIGN KEY (ID_area) REFERENCES AREA(ID)
+create table area_candidato(
+	id_candidato int,
+	id_area int,
+	primary key (id_candidato,id_area),
+	foreign key (id_candidato) references candidato(id),
+	foreign key (id_area) references area(id)
 );
 
-CREATE TABLE INSTITUICAO(
-	ID INT AUTO_INCREMENT PRIMARY KEY,
-	NOME VARCHAR(45) NOT NULL,
-	CNPJ VARCHAR(16) UNIQUE NOT NULL
+create table instituicao(
+	id int auto_increment primary key,
+	nome varchar(45) not null,
+	email varchar(45) unique not null,
+	senha varchar(20) not null,
+	cnpj varchar(16) unique not null
 );
 
-CREATE TABLE RESULTADO(
+create table resultado(
 	
 );

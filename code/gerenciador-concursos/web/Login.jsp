@@ -11,6 +11,8 @@
         <title>	</title>
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+        <script type="text/javascript" src="js/login.js"></script>
         <meta charset="utf-8">
     </head>
     <body>
@@ -96,7 +98,12 @@
                 <div class="row">
                     <h2 class="text-center col-sm-10">Cadastro</h2>
                 </div>
-                <form class="form-horizontal" action="./ValidaCadastro" method="POST">
+                <div class="row">
+                    <input type="radio" id="radioCandidato" name="tipoCadastro" checked> Sou candidato <br/>
+                    <input type="radio" id="radioInstituicao" name="tipoCadastro"> Sou instituição
+                </div>
+                <div class="row">
+                <form class="form-horizontal" action="./ValidaCadastro" method="POST" id="frmCadastroCandidato">
                     <div class="form-group">
                         <label for="txtNomeCadastro" class="col-sm-2 control-label">Nome</label>
                         <div class="col-sm-10">
@@ -133,6 +140,46 @@
                         </div>
                     </div>
                 </form>
+                </div>
+                <div class="row">
+                <form class="form-horizontal" action="./ValidaCadastro" method="POST" id="frmCadastroInstituicao">
+                     <div class="form-group">
+                        <label for="txtNomeCadastroInstituicao" class="col-sm-2 control-label">Nome</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="txtNomeCadastroInstituicao" placeholder="Nome">
+                        </div>                       
+                    </div>
+                    <div class="form-group">
+                        <label for="txtEmailCadastroInstituicao" class="col-sm-2 control-label">Email</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" name="txtEmailCadastroInstituicao" placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtCNPJCadastro" class="col-sm-2 control-label">CNPJ</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="txtCNPJCadastro">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtSenhaCadastroInstituicao" class="col-sm-2 control-label">Senha</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" name="txtSenhaCadastroInstituicao" placeholder="Senha">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtConfirmaSenhaCadastroInstituicao" class="col-sm-2 control-label">Repita a senha</label>
+                        <div class="col-sm-10">
+                            <input type="password" class="form-control" name="txtConfirmaSenhaCadastroInstituicao" placeholder="Repita a senha">
+                        </div>                       
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <input type="submit" class="btn btn-default" value="Cadastrar">
+                        </div>
+                    </div>
+                </form>
+                </div>
             </div>
         </div>
         <footer class="footer bd-footer">
