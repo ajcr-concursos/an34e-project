@@ -63,10 +63,13 @@ public class ValidaCadastro extends HttpServlet {
             throws ServletException, IOException {
         String nome = request.getParameter("txtNomeCadastro");
         String email = request.getParameter("txtEmailCadastro");
+        String senha = request.getParameter("txtSenhaCadastro");
         String CPF = request.getParameter("txtCPFCadastro");
         Candidato c = new Candidato();
         c.setNome(nome);
         c.setCPF(CPF);
+        c.setSenha(senha);
+        c.setEmail(email);
         c.setDataNascimento(Calendar.getInstance());
         CandidatoDAO dao = new CandidatoDAO();
         dao.insert(c);

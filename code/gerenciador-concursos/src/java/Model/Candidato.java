@@ -6,6 +6,7 @@
 package Model;
 
 import java.util.Calendar;
+import java.util.Date;
 
 /**
  *
@@ -14,7 +15,7 @@ import java.util.Calendar;
 public class Candidato extends Usuario{
     private String CPF;
     private Calendar dataNascimento;
-
+ 
 
     public String getCPF() {
         return CPF;
@@ -27,8 +28,12 @@ public class Candidato extends Usuario{
     public Calendar getDataNascimento() {
         return dataNascimento;
     }
-
+    
     public void setDataNascimento(Calendar dataNascimento) {
         this.dataNascimento = dataNascimento;
+    }
+    public void setDataNascimento(Date dataNascimento) {
+        this.dataNascimento = Calendar.getInstance();
+        this.dataNascimento.setTime(dataNascimento);
     }
 }

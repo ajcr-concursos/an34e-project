@@ -63,17 +63,17 @@
                 <div class="row">
                     <h2 class="text-center col-sm-10">Login</h2>
                 </div>
-                <form class="form-horizontal">
+                <form class="form-horizontal" action="./ValidaLogin" method="POST">
                     <div class="form-group">
                         <label for="txtEmail" class="col-sm-2 control-label">Email</label>
                         <div class="col-sm-10">
-                            <input type="email" class="form-control" id="txtEmail" placeholder="Email">
+                            <input type="email" class="form-control" name="txtEmail" placeholder="Email">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="txtSenha" class="col-sm-2 control-label">Senha</label>
                         <div class="col-sm-10">
-                            <input type="password" class="form-control" id="txtSenha" placeholder="Senha">
+                            <input type="password" class="form-control" name="txtSenha" placeholder="Senha">
                         </div>
                     </div>
                     <div class="form-group">
@@ -87,7 +87,7 @@
                     </div>
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
-                            <button type="submit" class="btn btn-default">Entrar</button>
+                            <input type="submit" class="btn btn-default" value="Entrar"/>
                         </div>
                     </div>
                 </form>
@@ -127,12 +127,9 @@
                             <input type="password" class="form-control" name="txtConfirmaSenhaCadastro" placeholder="Repita a senha">
                         </div>                       
                     </div>
-
-
-
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
-                            <input type="submit" class="btn btn-default">Cadastrar</button>
+                            <input type="submit" class="btn btn-default" value="Cadastrar">
                         </div>
                     </div>
                 </form>
