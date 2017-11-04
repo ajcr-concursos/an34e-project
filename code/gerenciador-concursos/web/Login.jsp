@@ -142,7 +142,7 @@
                 </form>
                 </div>
                 <div class="row">
-                <form class="form-horizontal" action="./ValidaCadastro" method="POST" id="frmCadastroInstituicao">
+                <form class="form-horizontal" action="./ValidaCadastroInstituicao" method="POST" id="frmCadastroInstituicao">
                      <div class="form-group">
                         <label for="txtNomeCadastroInstituicao" class="col-sm-2 control-label">Nome</label>
                         <div class="col-sm-10">
