@@ -119,9 +119,17 @@
                     <div class="form-group">
                         <label for="txtEmailCadastro" class="col-sm-2 control-label">CPF</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name="txtCPFCadastro">
+                            <input type="text" class="form-control" name="txtCPFCadastro" placeholder="CPF">
                         </div>
                     </div>
+         
+                    <div class="form-group">
+                        <label for="txtEmailCadastro" class="col-sm-2 control-label" >Data de Nascimento</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="txtDataNascimento" placeholder="AAAA-MM-DD">
+                        </div>
+                    </div>
+                    
                     <div class="form-group">
                         <label for="txtSenhaCadastro" class="col-sm-2 control-label">Senha</label>
                         <div class="col-sm-10">
