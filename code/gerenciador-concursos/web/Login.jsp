@@ -20,28 +20,23 @@
             <div class="container-fluid">
                 <div class="navbar-header">
                     <div class="navbar-brand">
-                        <a href="Index.html">AJCR Concursos</a>
+                        <a href="./Inicio">AJCR Concursos</a>
                     </div>
                 </div>
                 <ul class="nav navbar-nav">
                     <li>
-                        <a id="btnCadastroColaborador" href="/Projetos/CadastroColaborador">
-                            Item 1
+                        <a id="btnCadastroColaborador" href="/Projetos/">
+                            Concursos
                         </a>
                     </li>
                     <li>
-                        <a id="btnCadastroProjeto" href="/Projetos/CadastroProjeto">
-                            Item 2
+                        <a id="btnCadastroProjeto" href="/Projetos/">
+                            Empresas
                         </a>
                     </li>
                     <li>
-                        <a id="btnListarProjetos" href="/Projetos/ListarProjetos">
-                            Item 3
-                        </a>
-                    </li>
-                    <li>
-                        <a id="btnListarColaboradores" href="/Projetos/ListarColaboradores">
-                            Item 4
+                        <a id="btnListarProjetos" href="/Projetos/">
+                            Lista de Interesses
                         </a>
                     </li>
                 </ul
