@@ -30,25 +30,25 @@ create table instituicao(
 	cnpj varchar(16) unique not null
 );
 
-CREATE TABLE CONCURSO(
-	ID INT AUTO_INCREMENT PRIMARY KEY,
-	QTD_VAGAS INT,
-	DATA_PROVA DATE,
-	ID_INSTITUICAO INT,
-	FOREIGN KEY (ID_INSTITUICAO) REFERENCES INSTITUIÇÃO(ID)
+create table concurso(
+	id int auto_increment primary key,
+	qtd_vagas int,
+	data_prova date,
+	id_instituicao int,
+	foreign key (id_instituicao) references instituicao(id)
 );
 
-CREATE TABLE RESULTADO(
-	ID INT AUTO_INCREMENT PRIMARY KEY,
-	GABARITO VARCHAR(255),
-	ID_CONCURSO INT,
-	FOREIGN KEY (ID_CONCURSO) REFERENCES CONCURSO(ID)
+create table resultado(
+	id int auto_increment primary key,
+	gabarito varchar(255),
+	id_concurso int,
+	foreign key (id_concurso) references concurso(id)
 );
 
-CREATE TABLE AREA_CONCURSO(
-	ID_AREA INT,
-	ID_CONCURSO INT,
-	PRIMARY KEY (ID_AREA, ID_CONCURSO),
-	FOREIGN KEY (ID_AREA) REFERENCES AREA(ID),
-	FOREIGN KEY (ID_CONCURSO) REFERENCES CONCURSO(ID)
+create table area_concurso(
+	id_area int,
+	id_concurso int,
+	primary key (id_area, id_concurso),
+	foreign key (id_area) references area(id),
+	foreign key (id_concurso) references concurso(id)
 );
