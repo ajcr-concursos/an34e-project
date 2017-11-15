@@ -20,28 +20,23 @@
             <div class="container-fluid">
                 <div class="navbar-header">
                     <div class="navbar-brand">
-                        <a href="Index.html">AJCR Concursos</a>
+                        <a href="./Inicio">AJCR Concursos</a>
                     </div>
                 </div>
                 <ul class="nav navbar-nav">
                     <li>
-                        <a id="btnCadastroColaborador" href="/Projetos/CadastroColaborador">
-                            Item 1
+                        <a id="btnCadastroColaborador" href="/Projetos/">
+                            Concursos
                         </a>
                     </li>
                     <li>
-                        <a id="btnCadastroProjeto" href="/Projetos/CadastroProjeto">
-                            Item 2
+                        <a id="btnCadastroProjeto" href="/Projetos/">
+                            Empresas
                         </a>
                     </li>
                     <li>
-                        <a id="btnListarProjetos" href="/Projetos/ListarProjetos">
-                            Item 3
-                        </a>
-                    </li>
-                    <li>
-                        <a id="btnListarColaboradores" href="/Projetos/ListarColaboradores">
-                            Item 4
+                        <a id="btnListarProjetos" href="/Projetos/">
+                            Lista de Interesses
                         </a>
                     </li>
                 </ul
@@ -119,9 +114,17 @@
                     <div class="form-group">
                         <label for="txtEmailCadastro" class="col-sm-2 control-label">CPF</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name="txtCPFCadastro">
+                            <input type="text" class="form-control" name="txtCPFCadastro" placeholder="CPF">
                         </div>
                     </div>
+         
+                    <div class="form-group">
+                        <label for="txtEmailCadastro" class="col-sm-2 control-label" >Data de Nascimento</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="txtDataNascimento" placeholder="AAAA-MM-DD">
+                        </div>
+                    </div>
+                    
                     <div class="form-group">
                         <label for="txtSenhaCadastro" class="col-sm-2 control-label">Senha</label>
                         <div class="col-sm-10">

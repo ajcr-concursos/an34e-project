@@ -30,6 +30,25 @@ create table instituicao(
 	cnpj varchar(16) unique not null
 );
 
+create table concurso(
+	id int auto_increment primary key,
+	qtd_vagas int,
+	data_prova date,
+	id_instituicao int,
+	foreign key (id_instituicao) references instituicao(id)
+);
+
 create table resultado(
-	
+	id int auto_increment primary key,
+	gabarito varchar(255),
+	id_concurso int,
+	foreign key (id_concurso) references concurso(id)
+);
+
+create table area_concurso(
+	id_area int,
+	id_concurso int,
+	primary key (id_area, id_concurso),
+	foreign key (id_area) references area(id),
+	foreign key (id_concurso) references concurso(id)
 );

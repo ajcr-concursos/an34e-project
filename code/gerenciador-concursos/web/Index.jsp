@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Inicio</title>
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
     </head>
@@ -18,27 +18,22 @@
             <div class="container-fluid">
                 <div class="navbar-header">
                     <div class="navbar-brand">
-                        <a href="Index.html">Projetos</a>
+                        <a href="./Inicio">AJCR Concursos</a>
                     </div>
                 </div>
                 <ul class="nav navbar-nav">
                     <li>
-                        <a id="btnCadastroColaborador" href="/Projetos/CadastroColaborador">
-                            Inicio
-                        </a>
-                    </li>
-                    <li>
-                        <a id="btnCadastroProjeto" href="/Projetos/CadastroProjeto">
+                        <a id="btnCadastroProjeto" href="/Projetos/">
                             Concursos
                         </a>
                     </li>
                     <li>
-                        <a id="btnListarProjetos" href="/Projetos/ListarProjetos">
+                        <a id="btnListarProjetos" href="/Projetos/">
                             Empresas
                         </a>
                     </li>
                     <li>
-                        <a id="btnListarColaboradores" href="/Projetos/ListarColaboradores">
+                        <a id="btnListarColaboradores" href="/Projetos/">
                             Lista de Interesses
                         </a>
                     </li>
@@ -64,22 +59,16 @@
         <div class="container">
             <div class="row"> 
                 <div class="col-sm-4">
-<<<<<<< HEAD:code/gerenciador-concursos/web/Index.html
-                    <h3>Concurso 1</h3>
-                    <p>Aqui concurso mais acessado na área de interesse do usuário</p>
-=======
-                    <h3>${nome}</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
-                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
->>>>>>> e338cf32935c44e85020821ec61667872634cf7f:code/gerenciador-concursos/web/Index.jsp
+                    <h3>Concurso</h3>
+                    <p>Aqui concurso mais acessado</p>
                 </div>
                 <div class="col-sm-4">
-                    <h3>Empresa 1</h3>
-                    <p>Aqui empresa mais acessada na área de interesse do usuário</p>
+                    <h3>Empresa</h3>
+                    <p>Aqui empresa mais acessada</p>
                 </div>
                 <div class="col-sm-4">
-                    <h3>Concurso 2</h3>
-                    <p>Aqui concurso que falta menos tempo pra chegar</p>
+                    <h3>Área de Interesse</h3>
+                    <p>Aqui área de interesse mais acessada</p>
                 </div>
             </div>
         </div>

@@ -59,3 +59,13 @@ input,textarea{
 .glyphicon-remove{
     cursor:pointer;
 }
+
+.tabela{
+    font-size: 30px;
+    border: 3px solid #C0C0C0;
+    width: 100%;
+    float: right;
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 500px;     
+}

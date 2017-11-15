@@ -65,6 +65,7 @@ public class ValidaCadastro extends HttpServlet {
         String email = request.getParameter("txtEmailCadastro");
         String senha = request.getParameter("txtSenhaCadastro");
         String CPF = request.getParameter("txtCPFCadastro");
+        Calendar dataNasc = Util.ValidaDataNascimento( request.getParameter("txtDataNascimento"));
         Candidato c = new Candidato();
         c.setNome(nome);
         c.setCPF(CPF);
