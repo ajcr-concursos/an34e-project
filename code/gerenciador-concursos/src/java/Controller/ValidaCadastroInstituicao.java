@@ -3,24 +3,27 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Valida;
+package Controller;
 
-import Model.*;
+import Model.Candidato;
+import Model.CandidatoDAO;
+import Model.Instituicao;
+import Model.InstituicaoDAO;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Calendar;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author André Rodrigues
  */
-@WebServlet(name = "ValidaLogin", urlPatterns = {"/ValidaLogin"})
-public class ValidaLogin extends HttpServlet {
+@WebServlet(name = "ValidaCadastroInstituicao", urlPatterns = {"/ValidaCadastroInstituicao"})
+public class ValidaCadastroInstituicao extends HttpServlet {
     /**
      * Handles the HTTP <code>POST</code> method.
      *
@@ -32,15 +35,18 @@ public class ValidaLogin extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String email = request.getParameter("txtEmail");
-        String senha = request.getParameter("txtSenha");
-        CandidatoDAO dao = new CandidatoDAO();
-        Candidato c = dao.getCandidato(email, senha);
-        if(c != null){
-            HttpSession session = request.getSession();
-            session.setAttribute("sessao", c.getEmail());
-            response.sendRedirect("./Inicio");
-        }
+        String nome = request.getParameter("txtNomeCadastroInstituicao");
+        String email = request.getParameter("txtEmailCadastroInstituicao");
+        String senha = request.getParameter("txtSenhaCadastroInstituicao");
+        String CNPJ = request.getParameter("txtCNPJCadastro");
+        Instituicao inst = new Instituicao();
+        inst.setNome(nome);
+        inst.setCNPJ(CNPJ);
+        inst.setSenha(senha);
+        inst.setEmail(email);
+        InstituicaoDAO dao = new InstituicaoDAO();
+        dao.insert(inst);
+        response.sendRedirect("./Inicio");
     }
 
     /**

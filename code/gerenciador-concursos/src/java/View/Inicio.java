@@ -1,3 +1,5 @@
+package View;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -17,8 +19,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author André Rodrigues
  */
-@WebServlet(urlPatterns = {"/Login"})
-public class Login extends HttpServlet {
+@WebServlet(urlPatterns = {"/Inicio"})
+public class Inicio extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,7 +34,8 @@ public class Login extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        RequestDispatcher rd = request.getRequestDispatcher("Login.jsp");
+        request.setAttribute("nome","eae");
+        RequestDispatcher rd = request.getRequestDispatcher("View/Index.jsp");
         rd.forward(request, response);
     }
 
