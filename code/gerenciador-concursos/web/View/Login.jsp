@@ -13,6 +13,7 @@
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
         <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
         <script type="text/javascript" src="js/login.js"></script>
+        <script type="text/javascript" src="js/jquery.mask.js"></script>
         <meta charset="utf-8">
     </head>
     <body>
@@ -114,14 +115,14 @@
                     <div class="form-group">
                         <label for="txtEmailCadastro" class="col-sm-2 control-label">CPF</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name="txtCPFCadastro" placeholder="CPF">
+                            <input type="text" class="form-control" id="txtCPF" name="txtCPFCadastro" placeholder="CPF">
                         </div>
                     </div>
          
                     <div class="form-group">
                         <label for="txtEmailCadastro" class="col-sm-2 control-label" >Data de Nascimento</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name="txtDataNascimento" placeholder="AAAA-MM-DD">
+                            <input type="text" class="form-control" id="txtNasc" name="txtDataNascimento" placeholder="DD/MM/AAAA">
                         </div>
                     </div>
                     

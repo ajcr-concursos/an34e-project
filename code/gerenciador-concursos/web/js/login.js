@@ -9,4 +9,7 @@ $("document").ready(function(){
 		$("#frmCadastroInstituicao").show();
 		$("#frmCadastroCandidato").hide();
 	});
+        $("#txtNasc").mask('00/00/0000');
+        $("#txtCPF").mask('000.000.000-00',  {reverse: true});
+        
 });

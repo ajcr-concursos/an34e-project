@@ -14,7 +14,7 @@ public class Util {
     public static Calendar ValidaDataNascimento(String data) {
         String form[] = data.split("/");
         Calendar c = Calendar.getInstance();
-        c.set(Integer.parseInt(form[2]), Integer.parseInt(form[1]), Integer.parseInt(form[0]));
+        c.set(Integer.parseInt(form[0]), Integer.parseInt(form[1]), Integer.parseInt(form[2]));
         return c;
     }
 
