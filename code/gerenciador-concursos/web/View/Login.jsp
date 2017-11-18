@@ -16,46 +16,8 @@
         <meta charset="utf-8">
     </head>
     <body>
-        <nav class="navbar navbar-inverse">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <div class="navbar-brand">
-                        <a href="./Inicio">AJCR Concursos</a>
-                    </div>
-                </div>
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a id="btnCadastroColaborador" href="/Projetos/">
-                            Concursos
-                        </a>
-                    </li>
-                    <li>
-                        <a id="btnCadastroProjeto" href="/Projetos/">
-                            Empresas
-                        </a>
-                    </li>
-                    <li>
-                        <a id="btnListarProjetos" href="/Projetos/">
-                            Lista de Interesses
-                        </a>
-                    </li>
-                </ul
-                <ul class="nav navbar-nav">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="nav-registration">
-                            <a href="./Login">
-                                Login
-                            </a>                      
-                        </li>
-
-                    </ul>
-                </ul>
-
-            </div>
-
-        </nav>
+        <jsp:include page="Shared/Nav.jsp"/>
         <div class="row">
-
             <div class="col-lg-6"> 
                 <div class="row">
                     <h2 class="text-center col-sm-10">Login</h2>
@@ -185,10 +147,6 @@
                 </div>
             </div>
         </div>
-        <footer class="footer bd-footer">
-            <div class="container">
-                <p class="text-center">AJCR Concursos ®</p>
-            </div>
-        </footer>
+        <jsp:include page="Shared/Footer.jsp"/>
     </body>
 </html>
