@@ -16,49 +16,7 @@
         <meta charset="utf-8">
     </head>
     <body>
-        <nav class="navbar navbar-inverse">
-            <div class="container-fluid">
-                <div class="navbar-header">
-                    <div class="navbar-brand">
-                        <a href="Index.html">AJCR Concursos</a>
-                    </div>
-                </div>
-                <ul class="nav navbar-nav">
-                    <li>
-                        <a id="btnCadastroColaborador" href="/Projetos/CadastroColaborador">
-                            Item 1
-                        </a>
-                    </li>
-                    <li>
-                        <a id="btnCadastroProjeto" href="/Projetos/CadastroProjeto">
-                            Item 2
-                        </a>
-                    </li>
-                    <li>
-                        <a id="btnListarProjetos" href="/Projetos/ListarProjetos">
-                            Item 3
-                        </a>
-                    </li>
-                    <li>
-                        <a id="btnListarColaboradores" href="/Projetos/ListarColaboradores">
-                            Item 4
-                        </a>
-                    </li>
-                </ul
-                <ul class="nav navbar-nav">
-                    <ul class="nav navbar-nav navbar-right">
-                        <li class="nav-registration">
-                            <a href="./Login">
-                                Login
-                            </a>                      
-                        </li>
-
-                    </ul>
-                </ul>
-
-            </div>
-
-        </nav>
+        <jsp:include page="Shared/Nav.jsp"/>
         <div class="row">
 
             <div class="col-lg-6"> 
@@ -102,11 +60,6 @@
                 
             </div>
         </div> 
-
-        <footer class="footer bd-footer">
-            <div class="container">
-                <p class="text-center">AJCR Concursos ®</p>
-            </div>
-        </footer>
+        <jsp:include page="Shared/Footer.jsp"/>
     </body>
 </html>
