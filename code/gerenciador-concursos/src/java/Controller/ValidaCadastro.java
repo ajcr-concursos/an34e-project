@@ -65,13 +65,21 @@ public class ValidaCadastro extends HttpServlet {
         String email = request.getParameter("txtEmailCadastro");
         String senha = request.getParameter("txtSenhaCadastro");
         String CPF = request.getParameter("txtCPFCadastro");
+        
+        //Aqui q eu nao sei como fazer andre 
+        /*
+        CPF = Util.desformCPF(CPF);
+        if(Util.isCPF(CPF)==false){
+            response.sendRedirect("./login");
+        }*/
         Calendar dataNasc = Util.ValidaDataNascimento( request.getParameter("txtDataNascimento"));
+        
         Candidato c = new Candidato();
         c.setNome(nome);
         c.setCPF(CPF);
         c.setSenha(senha);
         c.setEmail(email);
-        c.setDataNascimento(Calendar.getInstance());
+        c.setDataNascimento(dataNasc);
         CandidatoDAO dao = new CandidatoDAO();
         dao.insert(c);
         response.sendRedirect("./Inicio");

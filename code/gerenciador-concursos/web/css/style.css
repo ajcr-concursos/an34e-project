@@ -69,3 +69,9 @@ input,textarea{
     margin-top: 20px;
     margin-left: 500px;     
 }
+
+.alertMessage{
+    font-size: 15px;
+    color: red;
+    display: none;
+}
