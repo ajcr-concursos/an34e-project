@@ -23,15 +23,15 @@
         <div class="container">
             <div class="row"> 
                 <div class="col-sm-4">
-                    <h3>Concurso</h3>
+                    <h3>Concursos</h3>
                     <p>Aqui concurso mais acessado</p>
                 </div>
                 <div class="col-sm-4">
-                    <h3>Empresa</h3>
+                    <h3>Empresas</h3>
                     <p>Aqui empresa mais acessada</p>
                 </div>
                 <div class="col-sm-4">
-                    <h3>Área de Interesse</h3>
+                    <h3>Áreas de Interesse</h3>
                     <p>Aqui área de interesse mais acessada</p>
                 </div>
             </div>

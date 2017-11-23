@@ -33,9 +33,23 @@
         <ul class="nav navbar-nav">
             <ul class="nav navbar-nav navbar-right">
                 <li class="nav-registration">
+                    <!--<if (session.getAttribute("session") != null) {
+                                out.println(
+                                        "<a href=\"./Sair\""
+                                        + "Sair"
+                                        + "</a>"
+                                );
+                            } else {
+                                out.println(
+                                        "<a href=\"./Login\""
+                                        + "Login"
+                                        + "</a>"
+                                );
+                            }
+                        }>--> 
                     <a href="./Login">
                         Login
-                    </a>                      
+                    </a>
                 </li>
             </ul>
         </ul>
