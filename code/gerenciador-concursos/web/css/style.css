@@ -2,6 +2,7 @@
   position: relative;
   min-height: 100%;
 }
+
 body {
  
   margin-bottom: 60px;
@@ -74,4 +75,8 @@ input,textarea{
     font-size: 15px;
     color: red;
     display: none;
+}
+
+h2{
+    text-align: center;
 }

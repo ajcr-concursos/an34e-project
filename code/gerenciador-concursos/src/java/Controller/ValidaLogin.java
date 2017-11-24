@@ -38,7 +38,7 @@ public class ValidaLogin extends HttpServlet {
         Candidato c = dao.getCandidato(email, senha);
         if(c != null){
             HttpSession session = request.getSession();
-            session.setAttribute("sessao", c.getEmail());
+            session.setAttribute("session", c.getEmail());
             response.sendRedirect("./Inicio");
         }
     }

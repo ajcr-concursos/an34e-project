@@ -5,6 +5,10 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="java.sql.Statement" %>
+<%@ page import="java.sql.Connection" %>
+<%@ page import="java.sql.DriverManager" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -23,16 +27,94 @@
         <div class="container">
             <div class="row"> 
                 <div class="col-sm-4">
-                    <h3>Concurso</h3>
-                    <p>Aqui concurso mais acessado</p>
+                    <h3>Concursos</h3>
+                    <form method="post">
+                            <%
+                                try {
+                                    Class.forName("com.mysql.jdbc.Driver");
+                                    String url = "jdbc:mysql://localhost:3306/gerenciaconcurso";
+                                    String username = "root";
+                                    String password = "1234";
+                                    String query = "select nome from concurso";
+                                    Connection conn = DriverManager.getConnection(url, username, password);
+                                    Statement stmt = conn.createStatement();
+                                    ResultSet rs = stmt.executeQuery(query);
+                                    while (rs.next()) {
+                            %>
+                            <p><%out.println(rs.getString("nome")); %></p>
+                            <%rs.getString("nome"); %>
+                            <%
+                                }
+                            %>
+                        <%
+                                rs.close();
+                                stmt.close();
+                                conn.close();
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        %>
+                    </form>
                 </div>
                 <div class="col-sm-4">
-                    <h3>Empresa</h3>
-                    <p>Aqui empresa mais acessada</p>
+                    <h3>Empresas</h3>
+                    <form method="post">
+                            <%
+                                try {
+                                    Class.forName("com.mysql.jdbc.Driver");
+                                    String url = "jdbc:mysql://localhost:3306/gerenciaconcurso";
+                                    String username = "root";
+                                    String password = "1234";
+                                    String query = "select nome from empresa";
+                                    Connection conn = DriverManager.getConnection(url, username, password);
+                                    Statement stmt = conn.createStatement();
+                                    ResultSet rs = stmt.executeQuery(query);
+                                    while (rs.next()) {
+                            %>
+                            <p><%out.println(rs.getString("nome")); %></p>
+                            <%rs.getString("nome"); %>
+                            <%
+                                }
+                            %>
+                        <%
+                                rs.close();
+                                stmt.close();
+                                conn.close();
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        %>
+                    </form>
                 </div>
                 <div class="col-sm-4">
-                    <h3>Área de Interesse</h3>
-                    <p>Aqui área de interesse mais acessada</p>
+                    <h3>Áreas de Interesse</h3>
+                    <form method="post">
+                            <%
+                                try {
+                                    Class.forName("com.mysql.jdbc.Driver");
+                                    String url = "jdbc:mysql://localhost:3306/gerenciaconcurso";
+                                    String username = "root";
+                                    String password = "1234";
+                                    String query = "select nome from area";
+                                    Connection conn = DriverManager.getConnection(url, username, password);
+                                    Statement stmt = conn.createStatement();
+                                    ResultSet rs = stmt.executeQuery(query);
+                                    while (rs.next()) {
+                            %>
+                            <p><%out.println(rs.getString("nome")); %></p>
+                            <%rs.getString("nome"); %>
+                            <%
+                                }
+                            %>
+                        <%
+                                rs.close();
+                                stmt.close();
+                                conn.close();
+                            } catch (Exception e) {
+                                e.printStackTrace();
+                            }
+                        %>
+                    </form>
                 </div>
             </div>
         </div>

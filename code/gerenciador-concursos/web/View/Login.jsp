@@ -79,7 +79,7 @@
                     <div class="form-group">
                         <label for="txtEmailCadastro" class="col-sm-2 control-label" >Data de Nascimento</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="txtNasc" name="txtDataNascimento" placeholder="AAAA-MM-DD">
+                            <input type="text" class="form-control" id="txtNasc" name="txtDataNascimento" placeholder="DD/MM/AAAA">
                         </div>
                     </div>
                     
@@ -122,6 +122,24 @@
                         <label for="txtCNPJCadastro" class="col-sm-2 control-label">CNPJ</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="txtCNPJ" name="txtCNPJCadastro" placeholder="CNPJ">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtRuaInstituicao" class="col-sm-2 control-label">Rua</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="txtRuaInstituicao" placeholder="Rua">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtBairroInstituicao" class="col-sm-2 control-label">Bairro</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="txtBairroInstituicao" placeholder="Bairro">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtNumeroInstituicao" class="col-sm-2 control-label">Numero</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="txtNumeroInstituicao" placeholder="Numero">
                         </div>
                     </div>
                     <div class="form-group">
