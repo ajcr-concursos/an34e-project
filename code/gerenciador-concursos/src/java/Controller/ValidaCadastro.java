@@ -65,13 +65,6 @@ public class ValidaCadastro extends HttpServlet {
         String email = request.getParameter("txtEmailCadastro");
         String senha = request.getParameter("txtSenhaCadastro");
         String CPF = request.getParameter("txtCPFCadastro");
-        
-        //Aqui q eu nao sei como fazer andre 
-        /*
-        
-        if(Util.isCPF(CPF)==false){
-            response.sendRedirect("./login");
-        }*/
         CPF = Util.desformCPF(CPF);
         Calendar dataNasc = Util.ValidaDataNascimento( request.getParameter("txtDataNascimento"));
         
