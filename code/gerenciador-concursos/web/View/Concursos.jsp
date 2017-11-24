@@ -42,7 +42,7 @@
                         <p><%out.println(rs.getString("empresa.nome")); %></p>
                         <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-8">
-                                <a href="./Concurso"<input type="submit" class="btn btn-default" value="Veja Mais"/>
+                                <a href=""><input type="submit" class="btn btn-default" value="Veja Mais"/>
                             </div>
                         </div>
                     </p>
