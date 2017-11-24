@@ -22,7 +22,7 @@ create table area_candidato(
 	foreign key (id_area) references area(id)
 );
 
-create table instituicao(
+create table empresa(
 	id int auto_increment primary key,
 	nome varchar(45) not null,
 	email varchar(45) unique not null,
@@ -34,8 +34,8 @@ create table concurso(
 	id int auto_increment primary key,
 	qtd_vagas int,
 	data_prova date,
-	id_instituicao int,
-	foreign key (id_instituicao) references instituicao(id)
+	id_empresa int,
+	foreign key (id_empresa) references empresa(id)
 );
 
 create table resultado(
