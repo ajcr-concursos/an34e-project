@@ -23,11 +23,17 @@
                 <a id="btnListarProjetos" href="./Empresas">
                     Empresas
                 </a>
-            </li>
+            </li>     
         </ul
         <ul class="nav navbar-nav">
             <ul class="nav navbar-nav navbar-right">
                 <li class="nav-registration">
+                    <% if(session.getAttribute("session") != null){ %>
+                        <a href="./Inicio">Logout</a>
+                        <% session.removeAttribute("session"); %>
+                    <% }else{ %>
+                        <a href="./Login">Login</a>
+                    <% } %>
                     <!--<if (session.getAttribute("session") != null) {
                                 out.println(
                                         "<a href=\"./Sair\""
@@ -42,9 +48,6 @@
                                 );
                             }
                         }>--> 
-                    <a href="./Login">
-                        Login
-                    </a>
                 </li>
             </ul>
         </ul>

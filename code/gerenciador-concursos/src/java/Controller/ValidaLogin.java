@@ -40,6 +40,8 @@ public class ValidaLogin extends HttpServlet {
             HttpSession session = request.getSession();
             session.setAttribute("session", c.getEmail());
             response.sendRedirect("./Inicio");
+        }else{
+            response.sendRedirect("./Login");
         }
     }
 
