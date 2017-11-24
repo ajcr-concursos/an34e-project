@@ -15,5 +15,9 @@ $("document").ready(function(){
 
         $("#txtCNPJ").mask('00.000.000/0000-00');
         
-        
+        $("btnEnviar").click(function(){
+            $.post("VaiCurintia",function(responseText){
+               alert(responseText); 
+            });
+        });
 });
