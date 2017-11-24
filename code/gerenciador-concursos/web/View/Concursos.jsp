@@ -37,9 +37,14 @@
                 <div class="jumbotron text-center">
                     <p>
                         <a href="#"><p><%out.println(rs.getString("nome")); %></p></a>
-                    <p><%out.println(rs.getInt("qtd_vagas")); %> vaga(s)</p>
-                    <p><%out.println(rs.getDate("data_prova")); %></p>
-                    <p><%out.println(rs.getString("empresa.nome")); %></p>
+                        <p><%out.println(rs.getInt("qtd_vagas")); %> vaga(s)</p>
+                        <p><%out.println(rs.getDate("data_prova")); %></p>
+                        <p><%out.println(rs.getString("empresa.nome")); %></p>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-8">
+                                <a href=""><input type="submit" class="btn btn-default" value="Veja Mais"/>
+                            </div>
+                        </div>
                     </p>
                 </div>
                 <%
