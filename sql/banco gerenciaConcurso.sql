@@ -1,3 +1,4 @@
+drop database gerenciaconcurso;
 create database gerenciaconcurso;
 use gerenciaconcurso;
 create table candidato(
@@ -28,7 +29,7 @@ create table empresa(
 	email varchar(45) unique not null,
 	senha varchar(20) not null,
 	cnpj varchar(16) unique not null,
-	rua varchar(45) not null,
+	rua varchar(45),
 	bairro varchar(45) not null,
 	numero varchar(45) not null
 );
