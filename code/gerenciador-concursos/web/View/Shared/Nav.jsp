@@ -15,18 +15,13 @@
         </div>
         <ul class="nav navbar-nav">
             <li>
-                <a id="btnCadastroProjeto" href="/Projetos/">
+                <a id="btnCadastroProjeto" href="./Concursos">
                     Concursos
                 </a>
             </li>
             <li>
-                <a id="btnListarProjetos" href="/Projetos/">
+                <a id="btnListarProjetos" href="./Empresas">
                     Empresas
-                </a>
-            </li>
-            <li>
-                <a id="btnListarColaboradores" href="/Projetos/">
-                    Lista de Interesses
                 </a>
             </li>
         </ul

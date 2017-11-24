@@ -27,11 +27,15 @@ create table empresa(
 	nome varchar(45) not null,
 	email varchar(45) unique not null,
 	senha varchar(20) not null,
-	cnpj varchar(16) unique not null
+	cnpj varchar(16) unique not null,
+	rua varchar(45) not null,
+	bairro varchar(45) not null,
+	numero varchar(45) not null
 );
 
 create table concurso(
 	id int auto_increment primary key,
+	nome varchar(45),
 	qtd_vagas int,
 	data_prova date,
 	id_empresa int,
@@ -51,4 +55,10 @@ create table area_concurso(
 	primary key (id_area, id_concurso),
 	foreign key (id_area) references area(id),
 	foreign key (id_concurso) references concurso(id)
+);
+
+create table endereco_empresa(
+	rua varchar(45),
+	bairro varchar(45),
+	numero varchar(45)
 );

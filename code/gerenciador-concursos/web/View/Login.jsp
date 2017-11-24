@@ -123,6 +123,24 @@
                         </div>
                     </div>
                     <div class="form-group">
+                        <label for="txtRuaInstituicao" class="col-sm-2 control-label">Rua</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="txtRuaInstituicao" placeholder="Rua">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtBairroInstituicao" class="col-sm-2 control-label">Bairro</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="txtBairroInstituicao" placeholder="Bairro">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtNumeroInstituicao" class="col-sm-2 control-label">Numero</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="txtNumeroInstituicao" placeholder="Numero">
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <label for="txtSenhaCadastroInstituicao" class="col-sm-2 control-label">Senha</label>
                         <div class="col-sm-10">
                             <input type="password" class="form-control" name="txtSenhaCadastroInstituicao" placeholder="Senha">

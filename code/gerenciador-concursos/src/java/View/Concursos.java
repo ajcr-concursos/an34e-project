@@ -1,10 +1,9 @@
-package View;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package View;
 
 import java.io.IOException;
 import javax.servlet.RequestDispatcher;
@@ -16,10 +15,10 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author André Rodrigues
+ * @author Rafael Andrade
  */
-@WebServlet(urlPatterns = {"/Inicio"})
-public class Inicio extends HttpServlet {
+@WebServlet(urlPatterns = {"/Concursos"})
+public class Concursos extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -34,7 +33,7 @@ public class Inicio extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         request.setAttribute("nome","eae");
-        RequestDispatcher rd = request.getRequestDispatcher("View/Index.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("View/Concursos.jsp");
         rd.forward(request, response);
     }
 
