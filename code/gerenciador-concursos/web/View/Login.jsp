@@ -52,7 +52,7 @@
                 </div>
                 <div class="row">
                     <input type="radio" id="radioCandidato" name="tipoCadastro" checked> Sou candidato <br/>
-                    <input type="radio" id="radioInstituicao" name="tipoCadastro"> Sou instituição
+                    <input type="radio" id="radioInstituicao" name="tipoCadastro"> Sou Empresa
                 </div>
                 <div class="row">
                 <form class="form-horizontal" action="./ValidaCadastro" method="POST" id="frmCadastroCandidato">
