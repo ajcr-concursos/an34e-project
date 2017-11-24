@@ -57,8 +57,11 @@ create table area_concurso(
 	foreign key (id_concurso) references concurso(id)
 );
 
-create table endereco_empresa(
-	rua varchar(45),
-	bairro varchar(45),
-	numero varchar(45)
+
+create table inscricao(
+	id_concurso int not null,
+	id_candidato int not null,
+	primary key (id_concurso, id_candidato),
+	foreign key (id_concurso) references concurso(id),
+	foreign key (id_candidato) references candidato(id)
 );
