@@ -5,6 +5,7 @@
  */
 package Model;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 
 /**
@@ -12,11 +13,13 @@ import java.util.Calendar;
  * @author andre
  */
 public class Concurso {
+
     private int id;
     private String nome;
     private int qtdVagas;
-    private Calendar dataProva;
+    public Calendar dataProva;
     private Instituicao empresa;
+
     public int getId() {
         return id;
     }
@@ -41,8 +44,10 @@ public class Concurso {
         this.qtdVagas = qtdVagas;
     }
 
-    public Calendar getDataProva() {
-        return dataProva;
+    public String getDataProva() {
+        SimpleDateFormat format1 = new SimpleDateFormat("dd-MM-yyyy");
+        String formatted = format1.format(dataProva.getTime());
+        return formatted;
     }
 
     public void setDataProva(Calendar dataProva) {
@@ -57,6 +62,4 @@ public class Concurso {
         this.empresa = empresa;
     }
 
-    
-    
 }

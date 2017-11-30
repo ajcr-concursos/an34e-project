@@ -29,7 +29,7 @@ public class ConcursoDAO {
         try(PreparedStatement st = this.con.prepareStatement(sql)){
             st.setString(1, c.getNome());
             st.setInt(2, c.getQtdVagas());
-            st.setDate(3, new java.sql.Date(c.getDataProva().getTimeInMillis()));
+            st.setDate(3, new java.sql.Date(c.dataProva.getTimeInMillis()));
             st.setInt(4, 1);
             st.executeUpdate();
         }catch(Exception err){

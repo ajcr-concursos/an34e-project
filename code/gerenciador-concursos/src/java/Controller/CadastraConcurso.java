@@ -34,7 +34,7 @@ public class CadastraConcurso extends HttpServlet {
             throws ServletException, IOException {
         String nome = request.getParameter("txtNome");
         int qtdVagas = Integer.parseInt(request.getParameter("txtQtdVagas"));
-        Calendar dataProva = Calendar.getInstance();
+        Calendar dataProva = Util.ValidaDataNascimento(request.getParameter("txtDataProva"));
         Concurso c = new Concurso();
         c.setNome(nome);
         c.setQtdVagas(qtdVagas);
