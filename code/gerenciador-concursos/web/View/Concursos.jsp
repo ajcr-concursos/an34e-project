@@ -16,49 +16,132 @@
         <title>Concursos</title>
         <link rel="stylesheet" type="text/css" href="css/style.css">
         <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+        <script src="js/jquery-3.2.1.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.mask.js"></script>
+        <script>
+            $("document").ready(function(){
+                $("#btnNovoConcurso").click(function(){
+                    $("#frmCadastroConcurso").modal();
+                });
+                    
+            });
+        </script>
     </head>
     <body>
         <jsp:include page="Shared/Nav.jsp"/>
-        <div class="col-sm-4conc">
+        <div class="container">
             <h2>Concursos Disponíveis</h2>
-            <form method="post">
-                <%
-                    try {
-                        Class.forName("com.mysql.jdbc.Driver");
-                        String url = "jdbc:mysql://localhost:3306/gerenciaconcurso";
-                        String username = "root";
-                        String password = "1234";
-                        String query = "select * from concurso join empresa on concurso.id_empresa = empresa.id order by concurso.nome";
-                        Connection conn = DriverManager.getConnection(url, username, password);
-                        Statement stmt = conn.createStatement();
-                        ResultSet rs = stmt.executeQuery(query);
-                        while (rs.next()) {
-                %>
-                <div class="jumbotron text-center">
-                    <p>
-                        <a href="#"><p><%out.println(rs.getString("nome")); %></p></a>
-                        <p><%out.println(rs.getInt("qtd_vagas")); %> vaga(s)</p>
-                        <p><%out.println(rs.getDate("data_prova")); %></p>
-                        <p><%out.println(rs.getString("empresa.nome")); %></p>
-                        <div class="form-group">
-                            <div class="col-sm-offset-2 col-sm-8">
-                                <a href=""><input type="submit" class="btn btn-default" value="Veja Mais"/>
-                            </div>
-                        </div>
-                    </p>
+            
+                <div class="row ">
+                    <div class="col-sm-6 text-left"></div>
+                    <div class="col-sm-6 text-right">
+                        <button class="btn btn-primary" id="btnNovoConcurso"><span class="glyphicon glyphicon-plus"></span>Novo</button>
+                    </div>
                 </div>
-                <%
-                    }
-                %>
-                <%
-                        rs.close();
-                        stmt.close();
-                        conn.close();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                %>
+           <form method="post" action="./CadastraConcurso">
+                <table class="table table-hover">
+                    <thead class="thead-inverse">
+                        <tr>
+                            <th>
+                                Nome
+                            </th>
+                            <th>
+                                Qtd vagas
+                            </th>
+                            <th>
+                                Data prova
+                            </th>
+                            <th>
+                                Empresa
+                            </th>
+
+                            <th>Opções</th>
+                        </tr>
+                    </thead>
+                    <%
+                        try {
+                            Class.forName("com.mysql.jdbc.Driver");
+                            String url = "jdbc:mysql://localhost:3306/gerenciaconcurso";
+                            String username = "root";
+                            String password = "49618";
+                            String query = "select * from concurso join empresa on concurso.id_empresa = empresa.id order by concurso.nome";
+                            Connection conn = DriverManager.getConnection(url, username, password);
+                            Statement stmt = conn.createStatement();
+                            ResultSet rs = stmt.executeQuery(query);
+                            while (rs.next()) {
+                    %>
+
+
+                    <tbody>
+                        <tr>
+                            <td><%out.println(rs.getString("nome")); %></td>
+                            <td><%out.println(rs.getInt("qtd_vagas")); %> vaga(s)</td>
+                            <td><%out.println(rs.getDate("data_prova")); %></td>
+                            <td><%out.println(rs.getString("empresa.nome")); %></td>
+                            <td><a href=""><input type="submit" class="btn btn-default" value="Veja Mais"/></td>
+                        </tr>
+
+                        <%
+                            }
+                        %>
+                    </tbody>
+                    <%
+                            rs.close();
+                            stmt.close();
+                            conn.close();
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    %>
+
+                </table>
             </form>
         </div>
-    </body>
+        <!-- Modal -->
+        <div class="modal fade" id="frmCadastroConcurso" role="dialog">
+            <div class="modal-dialog">
+
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Cadastrar concurso</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-horizontal" method="POST" action="./CadastraConcurso">
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" >Nome</label>
+                                <input type="text" class="form-control" name="txtNome"/>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" >Qtd. Vagas</label>
+                                <input type="text" class="form-control" name="txtQtdVagas"/>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" >Data prova</label>
+                                <input type="text" class="form-control" name="txtDataProva"/>
+                            </div>
+                            <div class="row">
+                                <div class="col-lg-6">
+                                     
+                                </div>
+                                <div class="col-lg-6">
+                                      <input type="submit" class="form-control btn btn-default" value="salvar"/>
+                                </div>
+                            </div>
+                           
+                        </form>
+                    </div>  
+                    <div class="modal-footer">
+                        <span class="text-right"><button type="button" class="btn btn-default" data-dismiss="modal">Fechar</button></span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</body>
 </html>

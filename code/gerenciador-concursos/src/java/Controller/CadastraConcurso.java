@@ -1,25 +1,25 @@
-package View;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package Controller;
 
 import java.io.IOException;
-import javax.servlet.RequestDispatcher;
+import java.io.PrintWriter;
+import java.util.Calendar;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
+import Model.*;
 /**
  *
- * @author André Rodrigues
+ * @author andre
  */
-@WebServlet(urlPatterns = {"/Inicio"})
-public class Inicio extends HttpServlet {
+@WebServlet(name = "CadastraConcurso", urlPatterns = {"/CadastraConcurso"})
+public class CadastraConcurso extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,9 +32,17 @@ public class Inicio extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        RequestDispatcher rd = request.getRequestDispatcher("View/Index.jsp");
-        rd.forward(request, response);
+        String nome = request.getParameter("txtNome");
+        int qtdVagas = Integer.parseInt(request.getParameter("txtQtdVagas"));
+        Calendar dataProva = Calendar.getInstance();
+        Concurso c = new Concurso();
+        c.setNome(nome);
+        c.setQtdVagas(qtdVagas);
+        c.setDataProva(dataProva);
+        ConcursoDAO cDao = new ConcursoDAO();
+        
+        cDao.insert(c);
+        response.sendRedirect("./Concursos");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

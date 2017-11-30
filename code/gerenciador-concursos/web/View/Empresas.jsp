@@ -9,6 +9,7 @@
 <%@ page import="java.sql.Statement" %>
 <%@ page import="java.sql.Connection" %>
 <%@ page import="java.sql.DriverManager" %>
+<%@page import="BD.BancoDados" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -22,41 +23,66 @@
         <div class="col-sm-4conc">
             <h2>Empresas</h2>
             <form method="post">
-                <%
-                    try {
-                        Class.forName("com.mysql.jdbc.Driver");
-                        String url = "jdbc:mysql://localhost:3306/gerenciaconcurso";
-                        String username = "root";
-                        String password = "1234";
-                        String query = "select * from empresa order by nome";
-                        Connection conn = DriverManager.getConnection(url, username, password);
-                        Statement stmt = conn.createStatement();
-                        ResultSet rs = stmt.executeQuery(query);
-                        while (rs.next()) {
-                %>
-                <div class="jumbotron text-center">
-                    <p>
-                        <a href="#"><p><%out.println(rs.getString("nome")); %></p></a>
-                        <p><%out.println(rs.getString("email")); %></p>
-                        <p><%out.println(rs.getString("rua")); %></p>
-                        <p><%out.println(rs.getString("bairro")); %></p>
-                        <p>
-                            <%out.println("Numero "); %>
-                            <%out.println(rs.getString("numero")); %>
-                        </p>
-                    </p>
-                </div>
-                <%
-                    }
-                %>
-                <%
-                        rs.close();
-                        stmt.close();
-                        conn.close();
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-                %>
+   
+                <table class="table table-hover">
+                    <thead class="thead-inverse">
+                        <tr>
+                            <th>
+                                Nome
+                            </th>
+                            <th>
+                                Email
+                            </th>
+                            <th>
+                                Rua
+                            </th>
+                            <th>
+                                Bairro
+                            </th>
+
+                            <th>Numero</th>
+                            <th>Numero</th>
+                        </tr>
+                    </thead>
+                    <%
+                        try {
+                            Class.forName("com.mysql.jdbc.Driver");
+                            String url = "jdbc:mysql://localhost:3306/gerenciaconcurso";
+                            String username = "root";
+                            String password = "49618";
+                            String query = "select * from empresa order by nome";
+                            Connection conn = DriverManager.getConnection(url, username, password);
+                            Statement stmt = conn.createStatement();
+                            ResultSet rs = stmt.executeQuery(query);
+                            while (rs.next()) {
+                    %>
+                    <tbody>
+                        <tr>
+                            <td><a href="#"><p><%out.println(rs.getString("nome")); %></a></td>
+                            <td><%out.println(rs.getString("email")); %></td>
+                            <td><%out.println(rs.getString("rua") == null ? "" : rs.getString("rua")); %></td>
+                            <td><%out.println(rs.getString("bairro")); %></td>
+                            <td>
+                                <%out.println("Numero "); %>
+                            </td>
+                            <td>
+                                <%out.println(rs.getString("numero")); %>
+                            </td>
+                        </tr>
+
+                        <%
+                            }
+                        %>
+                    </tbody>
+                    <%
+                            rs.close();
+                            stmt.close();
+                            conn.close();
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    %>
+                </table>
             </form>
         </div>
     </body>

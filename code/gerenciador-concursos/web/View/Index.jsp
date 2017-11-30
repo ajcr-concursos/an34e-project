@@ -34,7 +34,7 @@
                                     Class.forName("com.mysql.jdbc.Driver");
                                     String url = "jdbc:mysql://localhost:3306/gerenciaconcurso";
                                     String username = "root";
-                                    String password = "1234";
+                                    String password = "49618";
                                     String query = "select nome from concurso";
                                     Connection conn = DriverManager.getConnection(url, username, password);
                                     Statement stmt = conn.createStatement();
@@ -64,7 +64,7 @@
                                     Class.forName("com.mysql.jdbc.Driver");
                                     String url = "jdbc:mysql://localhost:3306/gerenciaconcurso";
                                     String username = "root";
-                                    String password = "1234";
+                                    String password = "49618";
                                     String query = "select nome from empresa";
                                     Connection conn = DriverManager.getConnection(url, username, password);
                                     Statement stmt = conn.createStatement();
@@ -94,7 +94,7 @@
                                     Class.forName("com.mysql.jdbc.Driver");
                                     String url = "jdbc:mysql://localhost:3306/gerenciaconcurso";
                                     String username = "root";
-                                    String password = "1234";
+                                    String password = "49618";
                                     String query = "select nome from area";
                                     Connection conn = DriverManager.getConnection(url, username, password);
                                     Statement stmt = conn.createStatement();
