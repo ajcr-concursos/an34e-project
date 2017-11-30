@@ -1,3 +1,4 @@
+drop database gerenciaconcurso;
 create database gerenciaconcurso;
 use gerenciaconcurso;
 create table candidato(
@@ -22,20 +23,24 @@ create table area_candidato(
 	foreign key (id_area) references area(id)
 );
 
-create table instituicao(
+create table empresa(
 	id int auto_increment primary key,
 	nome varchar(45) not null,
 	email varchar(45) unique not null,
 	senha varchar(20) not null,
-	cnpj varchar(16) unique not null
+	cnpj varchar(16) unique not null,
+	rua varchar(45),
+	bairro varchar(45) not null,
+	numero varchar(45) not null
 );
 
 create table concurso(
 	id int auto_increment primary key,
+	nome varchar(45),
 	qtd_vagas int,
 	data_prova date,
-	id_instituicao int,
-	foreign key (id_instituicao) references instituicao(id)
+	id_empresa int,
+	foreign key (id_empresa) references empresa(id)
 );
 
 create table resultado(
@@ -51,4 +56,13 @@ create table area_concurso(
 	primary key (id_area, id_concurso),
 	foreign key (id_area) references area(id),
 	foreign key (id_concurso) references concurso(id)
+);
+
+
+create table inscricao(
+	id_concurso int not null,
+	id_candidato int not null,
+	primary key (id_concurso, id_candidato),
+	foreign key (id_concurso) references concurso(id),
+	foreign key (id_candidato) references candidato(id)
 );

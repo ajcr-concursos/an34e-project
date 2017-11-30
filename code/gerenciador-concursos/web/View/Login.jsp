@@ -18,6 +18,10 @@
                     <h2 class="text-center col-sm-10">Login</h2>
                 </div>
                 <form class="form-horizontal" action="./ValidaLogin" method="POST">
+                    
+                        <input type="radio" id="radioCandidatoLogin" name="tipoLogin" value="candidato" checked> Sou candidato <br/>
+                        <input type="radio" id="radioInstituicaoLogin" name="tipoLogin" value="empresa"> Sou Empresa
+                    
                     <div class="form-group">
                         <label for="txtEmail" class="col-sm-2 control-label">Email</label>
                         <div class="col-sm-10">
@@ -52,7 +56,7 @@
                 </div>
                 <div class="row">
                     <input type="radio" id="radioCandidato" name="tipoCadastro" checked> Sou candidato <br/>
-                    <input type="radio" id="radioInstituicao" name="tipoCadastro"> Sou instituição
+                    <input type="radio" id="radioInstituicao" name="tipoCadastro"> Sou Empresa
                 </div>
                 <div class="row">
                 <form class="form-horizontal" action="./ValidaCadastro" method="POST" id="frmCadastroCandidato">
@@ -79,7 +83,11 @@
                     <div class="form-group">
                         <label for="txtEmailCadastro" class="col-sm-2 control-label" >Data de Nascimento</label>
                         <div class="col-sm-10">
+<<<<<<< HEAD
                             <input type="text" class="form-control" id="txtNasc" name="txtDataNascimento" placeholder="dd/mm/aaaaa">
+=======
+                            <input type="text" class="form-control" id="txtNasc" name="txtDataNascimento" placeholder="DD/MM/AAAA">
+>>>>>>> 3f5dbe620d335f66bcffab5c7289d9cb78e43f8b
                         </div>
                     </div>
                     
@@ -97,10 +105,12 @@
                     </div>
                     <div class="form-group">
                         <div class="col-sm-offset-2 col-sm-10">
-                            <input type="submit" class="btn btn-default" value="Cadastrar">
+                            <input type="submit" id="btnEnviar" class="btn btn-default" value="Cadastrar">
+                           
                         </div>
                     </div>
                 </form>
+                    
                 </div>
                 <div class="row">
                 <form class="form-horizontal" action="./ValidaCadastroInstituicao" method="POST" id="frmCadastroInstituicao">
@@ -120,6 +130,24 @@
                         <label for="txtCNPJCadastro" class="col-sm-2 control-label">CNPJ</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="txtCNPJ" name="txtCNPJCadastro" placeholder="CNPJ">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtRuaInstituicao" class="col-sm-2 control-label">Rua</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="txtRuaInstituicao" placeholder="Rua">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtBairroInstituicao" class="col-sm-2 control-label">Bairro</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="txtBairroInstituicao" placeholder="Bairro">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtNumeroInstituicao" class="col-sm-2 control-label">Numero</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" name="txtNumeroInstituicao" placeholder="Numero">
                         </div>
                     </div>
                     <div class="form-group">

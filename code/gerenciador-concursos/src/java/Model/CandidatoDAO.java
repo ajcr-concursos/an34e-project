@@ -15,7 +15,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author André Rodrigues
+ * @author André
  */
 public class CandidatoDAO {
     private Connection con;

@@ -39,15 +39,25 @@ public class ValidaCadastroInstituicao extends HttpServlet {
         String email = request.getParameter("txtEmailCadastroInstituicao");
         String senha = request.getParameter("txtSenhaCadastroInstituicao");
         String CNPJ = request.getParameter("txtCNPJCadastro");
+<<<<<<< HEAD
+=======
+        String rua = request.getParameter("txtRuaInstituicao");
+        String bairro = request.getParameter("txtBairroInstituicao");
+        String numero = request.getParameter("txtNumeroInstituicao");
+>>>>>>> 3f5dbe620d335f66bcffab5c7289d9cb78e43f8b
         CNPJ = Util.desformCNPJ(CNPJ);
         Instituicao inst = new Instituicao();
         inst.setNome(nome);
         inst.setCNPJ(CNPJ);
         inst.setSenha(senha);
         inst.setEmail(email);
+        inst.setRua(rua);
+        inst.setBairro(bairro);
+        inst.setNumero(numero);
         InstituicaoDAO dao = new InstituicaoDAO();
         dao.insert(inst);
         response.sendRedirect("./Inicio");
+        
     }
 
     /**

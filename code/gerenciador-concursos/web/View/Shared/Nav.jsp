@@ -15,27 +15,39 @@
         </div>
         <ul class="nav navbar-nav">
             <li>
-                <a id="btnCadastroProjeto" href="/Projetos/">
+                <a id="btnCadastroProjeto" href="./MeusConcursos">
                     Concursos
                 </a>
             </li>
             <li>
-                <a id="btnListarProjetos" href="/Projetos/">
+                <a id="btnListarProjetos" href="./Empresas">
                     Empresas
                 </a>
-            </li>
-            <li>
-                <a id="btnListarColaboradores" href="/Projetos/">
-                    Lista de Interesses
-                </a>
-            </li>
+            </li>     
         </ul
         <ul class="nav navbar-nav">
             <ul class="nav navbar-nav navbar-right">
                 <li class="nav-registration">
-                    <a href="./Login">
-                        Login
-                    </a>                      
+                    <% if(session.getAttribute("session") != null){ %>
+                        <a href="./Inicio">Logout</a>
+                        <% session.removeAttribute("session"); %>
+                    <% }else{ %>
+                        <a href="./Login">Login</a>
+                    <% } %>
+                    <!--<if (session.getAttribute("session") != null) {
+                                out.println(
+                                        "<a href=\"./Sair\""
+                                        + "Sair"
+                                        + "</a>"
+                                );
+                            } else {
+                                out.println(
+                                        "<a href=\"./Login\""
+                                        + "Login"
+                                        + "</a>"
+                                );
+                            }
+                        }>--> 
                 </li>
             </ul>
         </ul>

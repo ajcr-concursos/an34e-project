@@ -1,25 +1,26 @@
-package View;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
+package View;
+import Model.*;
 import java.io.IOException;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author André Rodrigues
+ * @author Rafael Andrade
  */
-@WebServlet(urlPatterns = {"/Inicio"})
-public class Inicio extends HttpServlet {
+@WebServlet(urlPatterns = {"/MeusConcursos"})
+public class MeusConcursos extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,8 +34,19 @@ public class Inicio extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        RequestDispatcher rd = request.getRequestDispatcher("View/Index.jsp");
-        rd.forward(request, response);
+        request.setAttribute("nome","eae");
+        HttpSession session = request.getSession();
+        if(session.getAttribute("sessionEmpresa") != null){
+            Instituicao i = new Instituicao();
+            i.setEmail((String)session.getAttribute("sessionEmpresa"));
+            List<Concurso> lstConcursos = new ConcursoDAO().getConcursos(i);
+            request.setAttribute("lstConcursos", lstConcursos);
+            RequestDispatcher rd = request.getRequestDispatcher("View/MeusConcursos.jsp");
+            rd.forward(request, response);
+        }else{
+            response.sendRedirect("./Inicio");
+        }
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

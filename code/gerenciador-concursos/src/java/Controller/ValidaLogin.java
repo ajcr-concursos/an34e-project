@@ -34,12 +34,31 @@ public class ValidaLogin extends HttpServlet {
             throws ServletException, IOException {
         String email = request.getParameter("txtEmail");
         String senha = request.getParameter("txtSenha");
-        CandidatoDAO dao = new CandidatoDAO();
-        Candidato c = dao.getCandidato(email, senha);
-        if(c != null){
+        String radio = request.getParameter("tipoLogin");
+        CandidatoDAO cDAO;
+        InstituicaoDAO iDAO;
+        Usuario u;
+        if("candidato".equals(radio)){
+            cDAO = new CandidatoDAO();
+            u = cDAO.getCandidato(email, senha);
+        }else{
+            iDAO = new InstituicaoDAO();
+            u=iDAO.getInstituicao(email, senha);
+        }
+        if(u != null){
             HttpSession session = request.getSession();
-            session.setAttribute("sessao", c.getEmail());
+            if(u instanceof Candidato){
+                session.removeAttribute("sessionEmpresa");
+                session.setAttribute("sessionCandidato", u.getEmail());
+            }
+            else{
+                session.removeAttribute("sessionCandidato");
+                session.setAttribute("sessionEmpresa", u.getEmail());
+            }
+                
             response.sendRedirect("./Inicio");
+        }else{
+            response.sendRedirect("./Login");
         }
     }
 
