@@ -71,7 +71,7 @@
                     <div class="form-group">
                         <label for="txtEmailCadastro" class="col-sm-2 control-label">CPF</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="txtCPF" name="txtCPFCadastro" placeholder="CPF">
+                            <input type="CPF" class="form-control" id="txtCPF" name="txtCPFCadastro" placeholder="CPF">
                             <h3 class="alertMessage" id="txtAlert">CPF Invalido!</h3>
                         </div>
                     </div>
@@ -79,7 +79,7 @@
                     <div class="form-group">
                         <label for="txtEmailCadastro" class="col-sm-2 control-label" >Data de Nascimento</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="txtNasc" name="txtDataNascimento" placeholder="AAAA-MM-DD">
+                            <input type="text" class="form-control" id="txtNasc" name="txtDataNascimento" placeholder="dd/mm/aaaaa">
                         </div>
                     </div>
                     
