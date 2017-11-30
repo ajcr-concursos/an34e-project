@@ -18,6 +18,10 @@
                     <h2 class="text-center col-sm-10">Login</h2>
                 </div>
                 <form class="form-horizontal" action="./ValidaLogin" method="POST">
+                    
+                        <input type="radio" id="radioCandidatoLogin" name="tipoLogin" value="candidato" checked> Sou candidato <br/>
+                        <input type="radio" id="radioInstituicaoLogin" name="tipoLogin" value="empresa"> Sou Empresa
+                    
                     <div class="form-group">
                         <label for="txtEmail" class="col-sm-2 control-label">Email</label>
                         <div class="col-sm-10">

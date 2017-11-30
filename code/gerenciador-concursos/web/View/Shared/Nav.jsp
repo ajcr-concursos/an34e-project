@@ -15,7 +15,7 @@
         </div>
         <ul class="nav navbar-nav">
             <li>
-                <a id="btnCadastroProjeto" href="./Concursos">
+                <a id="btnCadastroProjeto" href="./MeusConcursos">
                     Concursos
                 </a>
             </li>

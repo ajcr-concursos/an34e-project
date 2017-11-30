@@ -4,11 +4,11 @@
     Author     : Rafael Andrade
 --%>
 
+<%@page import="java.text.SimpleDateFormat"%>
+<%@page import="java.text.DateFormat"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@ page import="java.sql.ResultSet" %>
-<%@ page import="java.sql.Statement" %>
-<%@ page import="java.sql.Connection" %>
-<%@ page import="java.sql.DriverManager" %>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -52,49 +52,24 @@
                             <th>
                                 Data prova
                             </th>
-                            <th>
-                                Empresa
-                            </th>
+                    
 
                             <th>Opções</th>
                         </tr>
                     </thead>
-                    <%
-                        try {
-                            Class.forName("com.mysql.jdbc.Driver");
-                            String url = "jdbc:mysql://localhost:3306/gerenciaconcurso";
-                            String username = "root";
-                            String password = "49618";
-                            String query = "select * from concurso join empresa on concurso.id_empresa = empresa.id order by concurso.nome";
-                            Connection conn = DriverManager.getConnection(url, username, password);
-                            Statement stmt = conn.createStatement();
-                            ResultSet rs = stmt.executeQuery(query);
-                            while (rs.next()) {
-                    %>
-
-
+                
                     <tbody>
+                        <c:forEach items="${lstConcursos}" var="item" >
                         <tr>
-                            <td><%out.println(rs.getString("nome")); %></td>
-                            <td><%out.println(rs.getInt("qtd_vagas")); %> vaga(s)</td>
-                            <td><%out.println(rs.getDate("data_prova")); %></td>
-                            <td><%out.println(rs.getString("empresa.nome")); %></td>
+                            <td>${item.nome}</td>
+                            <td>${item.qtdVagas} vaga(s)</td>
+                            <td>${item.dataProva.getTime()}</td>
+                            
                             <td><a href=""><input type="submit" class="btn btn-default" value="Veja Mais"/></td>
                         </tr>
-
-                        <%
-                            }
-                        %>
+                        </c:forEach>
                     </tbody>
-                    <%
-                            rs.close();
-                            stmt.close();
-                            conn.close();
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                        }
-                    %>
-
+            
                 </table>
             </form>
         </div>

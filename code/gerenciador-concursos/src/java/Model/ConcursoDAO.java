@@ -8,6 +8,10 @@ package Model;
 import BD.BancoDados;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
 
 /**
  *
@@ -30,6 +34,27 @@ public class ConcursoDAO {
             st.executeUpdate();
         }catch(Exception err){
             System.out.println(err.getMessage());
+        }
+    }
+    public List<Concurso> getConcursos(Instituicao i){
+        List<Concurso> lst = new ArrayList<>();
+        String sql = "select * from concurso where id_empresa in (select id from empresa where email = ?) order by concurso.nome";
+        try(PreparedStatement st = this.con.prepareStatement(sql)){
+            st.setString(1, i.getEmail());
+            ResultSet rs = st.executeQuery();
+            while(rs.next()){
+                Concurso c = new Concurso();
+                c.setNome(rs.getString("nome"));
+                c.setQtdVagas(rs.getInt("qtd_vagas"));
+                Calendar calendario = Calendar.getInstance();
+                calendario.setTime(rs.getDate("data_prova"));
+                c.setDataProva(calendario);
+                lst.add(c);
+            }
+            return lst;
+        }catch(Exception err){
+            System.out.println(err.getMessage());
+            return null;
         }
     }
 }

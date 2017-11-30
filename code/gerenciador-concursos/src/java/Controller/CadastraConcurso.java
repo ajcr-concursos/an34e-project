@@ -42,7 +42,7 @@ public class CadastraConcurso extends HttpServlet {
         ConcursoDAO cDao = new ConcursoDAO();
         
         cDao.insert(c);
-        response.sendRedirect("./Concursos");
+        response.sendRedirect("./MeusConcursos");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
