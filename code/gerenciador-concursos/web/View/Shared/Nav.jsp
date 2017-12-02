@@ -30,7 +30,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li class="nav-registration">
                     <c:choose>
-                        <c:when test="${sessionScope.sessionCandidato == null}">
+                        <c:when test="${sessionScope.sessionCandidato == null && sessionScope.sessionEmpresa == null}">
                             <a href="./Login">Login</a>
                         </c:when>    
                         <c:otherwise>
