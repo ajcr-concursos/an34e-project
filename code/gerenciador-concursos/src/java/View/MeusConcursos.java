@@ -36,8 +36,7 @@ public class MeusConcursos extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession();
         if(session.getAttribute("sessionEmpresa") != null){
-            Instituicao i = new Instituicao();
-            i.setEmail((String)session.getAttribute("sessionEmpresa"));
+            Instituicao i =(Instituicao) session.getAttribute("sessionEmpresa");
             List<Concurso> lstConcursos = new ConcursoDAO().getConcursos(i);
             request.setAttribute("lstConcursos", lstConcursos);
             RequestDispatcher rd = request.getRequestDispatcher("View/MeusConcursos.jsp");

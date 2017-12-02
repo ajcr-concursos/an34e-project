@@ -17,6 +17,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -53,6 +54,8 @@ public class ValidaCadastroInstituicao extends HttpServlet {
         inst.setNumero(numero);
         InstituicaoDAO dao = new InstituicaoDAO();
         dao.insert(inst);
+        HttpSession session = request.getSession();
+        session.setAttribute("sessionEmpresa", inst);
         response.sendRedirect("./Inicio");
         
     }

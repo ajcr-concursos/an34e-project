@@ -53,7 +53,7 @@ public class ValidaLogin extends HttpServlet {
             }
             else{
                 session.removeAttribute("sessionCandidato");
-                session.setAttribute("sessionEmpresa", u.getEmail());
+                session.setAttribute("sessionEmpresa", u);
             }
             response.sendRedirect("./Perfil");
         }else{
