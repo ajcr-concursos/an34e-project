@@ -5,6 +5,7 @@
  */
 package Model;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -28,7 +29,11 @@ public class Candidato extends Usuario{
     public Calendar getDataNascimento() {
         return dataNascimento;
     }
-    
+    public String getDataNascimentoString(){
+        SimpleDateFormat format1 = new SimpleDateFormat("dd-MM-yyyy");
+        String formatted = format1.format(dataNascimento.getTime());
+        return formatted;
+    }
     public void setDataNascimento(Calendar dataNascimento) {
         this.dataNascimento = dataNascimento;
     }
