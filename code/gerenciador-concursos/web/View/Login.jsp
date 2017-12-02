@@ -83,11 +83,7 @@
                     <div class="form-group">
                         <label for="txtEmailCadastro" class="col-sm-2 control-label" >Data de Nascimento</label>
                         <div class="col-sm-10">
-<<<<<<< HEAD
                             <input type="text" class="form-control" id="txtNasc" name="txtDataNascimento" placeholder="dd/mm/aaaaa">
-=======
-                            <input type="text" class="form-control" id="txtNasc" name="txtDataNascimento" placeholder="DD/MM/AAAA">
->>>>>>> 3f5dbe620d335f66bcffab5c7289d9cb78e43f8b
                         </div>
                     </div>
                     
