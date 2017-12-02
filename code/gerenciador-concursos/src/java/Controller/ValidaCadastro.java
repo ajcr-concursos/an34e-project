@@ -15,6 +15,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -76,6 +77,8 @@ public class ValidaCadastro extends HttpServlet {
         c.setDataNascimento(dataNasc);
         CandidatoDAO dao = new CandidatoDAO();
         dao.insert(c);
+        HttpSession session = request.getSession();
+        session.setAttribute("sessionCandidato", c);
         response.sendRedirect("./Inicio");
     }
 

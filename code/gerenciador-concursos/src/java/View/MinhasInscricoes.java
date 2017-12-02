@@ -38,8 +38,7 @@ public class MinhasInscricoes extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession();
         if(session.getAttribute("sessionCandidato") != null){
-            Candidato c = new Candidato();
-            c.setEmail((String)session.getAttribute("sessionCandidato"));
+            Candidato c = (Candidato)session.getAttribute("sessionCandidato");
             List<Inscricao> lstInscricoes = new InscricaoDAO().getInscricoes(c);
             request.setAttribute("lstInscricoes", lstInscricoes);
             RequestDispatcher rd = request.getRequestDispatcher("View/MinhasInscricoes.jsp");

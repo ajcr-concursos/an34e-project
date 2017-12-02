@@ -49,14 +49,13 @@ public class ValidaLogin extends HttpServlet {
             HttpSession session = request.getSession();
             if(u instanceof Candidato){
                 session.removeAttribute("sessionEmpresa");
-                session.setAttribute("sessionCandidato", u.getEmail());
+                session.setAttribute("sessionCandidato", u);
             }
             else{
                 session.removeAttribute("sessionCandidato");
                 session.setAttribute("sessionEmpresa", u.getEmail());
             }
-                
-            response.sendRedirect("./Inicio");
+            response.sendRedirect("./Perfil");
         }else{
             response.sendRedirect("./Login");
         }
