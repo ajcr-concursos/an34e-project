@@ -31,7 +31,7 @@
     <body>
         <jsp:include page="Shared/Nav.jsp"/>
         <div class="container">
-            <h2>Concursos Disponíveis</h2>
+            <h2>Meus concursos cadastrados</h2>
             
                 <div class="row ">
                     <div class="col-sm-6 text-left"></div>
@@ -63,7 +63,7 @@
                         <tr>
                             <td>${item.nome}</td>
                             <td>${item.qtdVagas} vaga(s)</td>
-                            <td>${item.dataProva.getTime()}</td>
+                            <td>${item.dataProva}</td>
                             
                             <td><a href=""><input type="submit" class="btn btn-default" value="Veja Mais"/></td>
                         </tr>

@@ -4,6 +4,7 @@
     Author     : André Rodrigues
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <nav class="navbar navbar-inverse">
@@ -28,26 +29,14 @@
         <ul class="nav navbar-nav">
             <ul class="nav navbar-nav navbar-right">
                 <li class="nav-registration">
-                    <% if(session.getAttribute("session") != null){ %>
-                        <a href="./Inicio">Logout</a>
-                        <% session.removeAttribute("session"); %>
-                    <% }else{ %>
-                        <a href="./Login">Login</a>
-                    <% } %>
-                    <!--<if (session.getAttribute("session") != null) {
-                                out.println(
-                                        "<a href=\"./Sair\""
-                                        + "Sair"
-                                        + "</a>"
-                                );
-                            } else {
-                                out.println(
-                                        "<a href=\"./Login\""
-                                        + "Login"
-                                        + "</a>"
-                                );
-                            }
-                        }>--> 
+                    <c:choose>
+                        <c:when test="${sessionScope.sessionCandidato == null}">
+                            <a href="./Login">Login</a>
+                        </c:when>    
+                        <c:otherwise>
+                           <a href="./Logout">Logout</a>
+                        </c:otherwise>
+                    </c:choose>
                 </li>
             </ul>
         </ul>

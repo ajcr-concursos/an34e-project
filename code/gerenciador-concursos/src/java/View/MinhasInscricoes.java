@@ -4,8 +4,10 @@
  * and open the template in the editor.
  */
 package View;
+
 import Model.*;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -17,10 +19,10 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author Rafael Andrade
+ * @author andre
  */
-@WebServlet(urlPatterns = {"/MeusConcursos"})
-public class MeusConcursos extends HttpServlet {
+@WebServlet(name = "MinhasInscricoes", urlPatterns = {"/MinhasInscricoes"})
+public class MinhasInscricoes extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,17 +37,14 @@ public class MeusConcursos extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession();
-        if(session.getAttribute("sessionEmpresa") != null){
-            Instituicao i = new Instituicao();
-            i.setEmail((String)session.getAttribute("sessionEmpresa"));
-            List<Concurso> lstConcursos = new ConcursoDAO().getConcursos(i);
-            request.setAttribute("lstConcursos", lstConcursos);
-            RequestDispatcher rd = request.getRequestDispatcher("View/MeusConcursos.jsp");
+        if(session.getAttribute("sessionCandidato") != null){
+            Candidato c = new Candidato();
+            c.setEmail((String)session.getAttribute("sessionCandidato"));
+            List<Inscricao> lstInscricoes = new InscricaoDAO().getInscricoes(c);
+            request.setAttribute("lstInscricoes", lstInscricoes);
+            RequestDispatcher rd = request.getRequestDispatcher("View/MinhasInscricoes.jsp");
             rd.forward(request, response);
-        }else{
-            response.sendRedirect("./Inicio");
         }
-
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

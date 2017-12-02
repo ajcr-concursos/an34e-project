@@ -36,7 +36,7 @@ public class Login extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession();
-        if(session.getAttribute("session")!= null){
+        if(session.getAttribute("sessionCandidato")!= null || session.getAttribute("sessionEmpresa")!= null){
             response.sendRedirect("./Inicio");
         }else{
             RequestDispatcher rd = request.getRequestDispatcher("View/Login.jsp");
