@@ -20,11 +20,11 @@
         <script src="js/bootstrap.min.js"></script>
         <script src="js/jquery.mask.js"></script>
         <script>
-            $("document").ready(function(){
-                $("#btnNovoConcurso").click(function(){
+            $("document").ready(function () {
+                $("#btnNovoConcurso").click(function () {
                     $("#frmCadastroConcurso").modal();
                 });
-                    
+
             });
         </script>
     </head>
@@ -32,14 +32,14 @@
         <jsp:include page="Shared/Nav.jsp"/>
         <div class="container">
             <h2>Meus concursos cadastrados</h2>
-            
-                <div class="row ">
-                    <div class="col-sm-6 text-left"></div>
-                    <div class="col-sm-6 text-right">
-                       <button class="btn btn-primary" id="btnNovoConcurso"><span class="glyphicon glyphicon-plus"></span>Novo</button>
-                    </div>
+
+            <div class="row ">
+                <div class="col-sm-6 text-left"></div>
+                <div class="col-sm-6 text-right">
+                    <button class="btn btn-primary" id="btnNovoConcurso"><span class="glyphicon glyphicon-plus"></span>Novo</button>
                 </div>
-           <form method="post" action="./CadastraConcurso">
+            </div>
+            <form method="post" action="./CadastraConcurso">
                 <table class="table table-hover">
                     <thead class="thead-inverse">
                         <tr>
@@ -52,24 +52,24 @@
                             <th>
                                 Data prova
                             </th>
-                    
+
 
                             <th>Opções</th>
                         </tr>
                     </thead>
-                
+
                     <tbody>
                         <c:forEach items="${lstConcursos}" var="item" >
-                        <tr>
-                            <td>${item.nome}</td>
-                            <td>${item.qtdVagas} vaga(s)</td>
-                            <td>${item.dataProva}</td>
-                            
-                            <td><a href=""><input type="submit" class="btn btn-default" value="Veja Mais"/></td>
-                        </tr>
+                            <tr>
+                                <td>${item.nome}</td>
+                                <td>${item.qtdVagas} vaga(s)</td>
+                                <td>${item.dataProva}</td>
+
+                                <td><a href=""><input type="submit" class="btn btn-default" value="Veja Mais"/></td>
+                            </tr>
                         </c:forEach>
                     </tbody>
-            
+
                 </table>
             </form>
         </div>
@@ -99,13 +99,13 @@
                             </div>
                             <div class="row">
                                 <div class="col-lg-6">
-                                     
+
                                 </div>
                                 <div class="col-lg-6">
-                                      <input type="submit" class="form-control btn btn-default" value="salvar"/>
+                                    <input type="submit" class="form-control btn btn-default" value="salvar"/>
                                 </div>
                             </div>
-                           
+
                         </form>
                     </div>  
                     <div class="modal-footer">
