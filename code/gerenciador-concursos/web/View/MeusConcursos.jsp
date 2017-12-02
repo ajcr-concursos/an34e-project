@@ -36,7 +36,7 @@
                 <div class="row ">
                     <div class="col-sm-6 text-left"></div>
                     <div class="col-sm-6 text-right">
-                        <button class="btn btn-primary" id="btnNovoConcurso"><span class="glyphicon glyphicon-plus"></span>Novo</button>
+                       <button class="btn btn-primary" id="btnNovoConcurso"><span class="glyphicon glyphicon-plus"></span>Novo</button>
                     </div>
                 </div>
            <form method="post" action="./CadastraConcurso">
