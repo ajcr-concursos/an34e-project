@@ -37,16 +37,18 @@ public class InscricaoDAO {
     public List<Inscricao> getInscricoes(Candidato c){
         List<Inscricao> lst = new ArrayList<>();
         String sql = "select * from inscricao i inner join concurso c on (i.id_concurso = c.id)"+
-                " inner join candidato ca on (i.id_candidato = ca.id) where c.id=?";
+                " inner join candidato ca on (i.id_candidato = ca.id) where ca.email=?";
         try(PreparedStatement st = this.con.prepareStatement(sql)){
-            st.setInt(1, c.getId());
+            st.setString(1, c.getEmail());
             ResultSet rs = st.executeQuery();
             while(rs.next()){
                 Concurso conc = new Concurso();
-                conc.setId(rs.getInt("i.id"));
+                conc.setId(rs.getInt("c.id"));
                 conc.setNome(rs.getString("c.nome"));
+                conc.setQtdVagas(rs.getInt("c.qtd_vagas"));
                 Calendar calendario = Calendar.getInstance();
                 calendario.setTime(rs.getDate("c.data_prova"));
+                conc.setDataProva(calendario);
                 Inscricao insc = new Inscricao();
                 insc.setConcurso(conc);
                 lst.add(insc);
