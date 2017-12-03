@@ -14,6 +14,7 @@ public abstract class Usuario {
     private String nome;
     private String email;
     private String senha;
+    
     public int getId() {
         return id;
     }

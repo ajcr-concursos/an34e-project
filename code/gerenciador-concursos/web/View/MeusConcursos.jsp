@@ -97,6 +97,18 @@
                                 <label class="control-label col-sm-2" >Data prova</label>
                                 <input type="text" class="form-control" name="txtDataProva"/>
                             </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2" >Areas de Abrangencia</label>
+                                <select name="txtArea" id="txtAreaId" class="form-control selecao" >
+                                    <option class="form-control selecao" value="">Selecione uma area</option>
+                                    <option class="form-control selecao" value=eletrica">Eletrica</option>
+                                    <option class="form-control selecao" value="mecanica">Mecanica</option>
+                                    <option class="form-control selecao" value="Administracao">Administração </option>
+                                    <option class="form-control selecao" value="computacao">Computação</option>
+                                    <option class="form-control selecao" value="direito">Direito</option>
+                                </select>
+                            </div>
+                            
                             <div class="row">
                                 <div class="col-lg-6">
 

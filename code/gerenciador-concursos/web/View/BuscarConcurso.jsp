@@ -23,19 +23,21 @@
                 <div class="row ">
                     <div class="col-sm-6 text-left"></div>
                     <div class="col-sm-6 text-right">
-                        <button class="btn btn-primary" id="btnBuscar"> <span class="glyphicon glyphicon-zoom-in"> </span>Buscar</button>
+                        <button class="btn btn-primary" id="btnBuscar" name="btnBucar"> <span class="glyphicon glyphicon-zoom-in"> </span>Buscar</button>
                     </div>
                 </div>
             <div>
                 <h4>Escolha as areas de seu interesse</h4>
             </div>
             <div>
-                <div><input type="checkbox" id="areaEletrica">Eletrica </input></div>
-                <div><input type="checkbox" id="areaComputação">Computação </input></div>
-                <div><input type="checkbox" id="Mecanica">Mecanica </input></div>
-                <div><input type="checkbox" id="areaDireito">Direito </input></div>
-                <div><input type="checkbox" id="areaAdministração">Administração </input></div>
-                <div><input type="checkbox" id="areaGeral">Geral (todas as areas) </input></div>
+                <select name="txtInteresse" id="txtAreaId" class="form-control selecao" >
+                    <option class="form-control selecao" value="">Geral (todas as areas)</option>
+                    <option class="form-control selecao" value=eletrica">Eletrica</option>
+                    <option class="form-control selecao" value="mecanica">Mecanica</option>
+                    <option class="form-control selecao" value="Administracao">Administração </option>
+                    <option class="form-control selecao" value="computacao">Computação</option>
+                    <option class="form-control selecao" value="direito">Direito</option>
+                </select>
             </div>
            <form method="post" action="./CadastraConcurso">
                 <table class="table table-hover">

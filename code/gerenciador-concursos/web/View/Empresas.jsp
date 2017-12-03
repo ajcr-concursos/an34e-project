@@ -49,7 +49,7 @@
                             Class.forName("com.mysql.jdbc.Driver");
                             String url = "jdbc:mysql://localhost:3306/gerenciaconcurso";
                             String username = "root";
-                            String password = "49618";
+                            String password = "1234";
                             String query = "select * from empresa order by nome";
                             Connection conn = DriverManager.getConnection(url, username, password);
                             Statement stmt = conn.createStatement();

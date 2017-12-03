@@ -14,6 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import Model.*;
+import javax.servlet.http.HttpSession;
 /**
  *
  * @author andre
@@ -32,16 +33,20 @@ public class CadastraConcurso extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        HttpSession session = request.getSession();
         String nome = request.getParameter("txtNome");
         int qtdVagas = Integer.parseInt(request.getParameter("txtQtdVagas"));
         Calendar dataProva = Util.ValidaDataNascimento(request.getParameter("txtDataProva"));
+        String area = request.getParameter("txtArea");
         Concurso c = new Concurso();
+        c.setEmpresa((Instituicao)session.getAttribute("sessionEmpresa"));
         c.setNome(nome);
         c.setQtdVagas(qtdVagas);
         c.setDataProva(dataProva);
         ConcursoDAO cDao = new ConcursoDAO();
-        
         cDao.insert(c);
+        //area e o nome da area utilizada para dar insert em area concurso;
+        cDao.insertAreaConcurso(c.getNome(), area);
         response.sendRedirect("./MeusConcursos");
     }
 

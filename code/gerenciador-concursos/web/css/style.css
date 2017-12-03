@@ -80,3 +80,7 @@ input,textarea{
 h2{
     text-align: center;
 }
+
+.selecao{
+    width: 40% !important;
+}
