@@ -52,7 +52,7 @@
                                             <c:choose>
                                                 <c:when test="${sessionScope.sessionCandidato != null}">
                                                     <tr>
-                                                        <td>Date de Nascimento</td>
+                                                        <td>Data de Nascimento</td>
                                                         <td>${sessionScope.sessionCandidato.getDataNascimentoString()}</td>
                                                     </tr>
                                                 </c:when>    

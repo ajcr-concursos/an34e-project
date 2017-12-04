@@ -17,14 +17,24 @@
         <ul class="nav navbar-nav">
             <li>
                 <a id="btnCadastroProjeto" href="./MeusConcursos">
-                    Concursos
+                    Meus Concursos
                 </a>
             </li>
             <li>
                 <a id="btnListarProjetos" href="./Empresas">
                     Empresas
                 </a>
-            </li>     
+            </li>
+            <li>
+                <a id="btnListarProjetos" href="./Perfil">
+                    Meu Perfil
+                </a>
+            </li>
+            <li>
+                <a id="btnCadastroProjeto" href="./BuscarConcurso">
+                    Concursos
+                </a>
+            </li>
         </ul
         <ul class="nav navbar-nav">
             <ul class="nav navbar-nav navbar-right">

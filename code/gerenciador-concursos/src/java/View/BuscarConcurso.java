@@ -5,14 +5,20 @@
  */
 package View;
 
+import Model.Candidato;
+import Model.Concurso;
+import Model.ConcursoDAO;
+import Model.Instituicao;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -33,9 +39,18 @@ public class BuscarConcurso extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        RequestDispatcher rd = request.getRequestDispatcher("View/BuscarConcurso.jsp");
-        rd.forward(request, response);
-        
+        HttpSession session = request.getSession();
+        try{
+            Instituicao i =(Instituicao) session.getAttribute("sessionEmpresa");
+            List<Concurso> lstConcursos = new ConcursoDAO().getTodosConcursos();
+            request.setAttribute("lstConcursos", lstConcursos);
+            RequestDispatcher rd = request.getRequestDispatcher("View/BuscarConcurso.jsp");
+            System.out.println(lstConcursos.size());
+            rd.forward(request, response);
+        }catch(Exception i){
+            System.out.println(i);
+        }
+
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
