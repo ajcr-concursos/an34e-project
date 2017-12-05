@@ -63,19 +63,19 @@
                     <div class="form-group">
                         <label for="txtNomeCadastro" class="col-sm-2 control-label">Nome</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" name="txtNomeCadastro" placeholder="Nome">
+                            <input type="text" class="form-control" name="txtNomeCadastro" placeholder="Nome" required>
                         </div>                       
                     </div>
                     <div class="form-group">
                         <label for="txtEmailCadastro" class="col-sm-2 control-label">Email</label>
                         <div class="col-sm-10">
-                            <input type="email" class="form-control" name="txtEmailCadastro" placeholder="Email">
+                            <input type="email" class="form-control" name="txtEmailCadastro" placeholder="Email" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="txtEmailCadastro" class="col-sm-2 control-label">CPF</label>
                         <div class="col-sm-10">
-                            <input type="CPF" class="form-control" id="txtCPF" name="txtCPFCadastro" placeholder="CPF">
+                            <input type="CPF" class="form-control" id="txtCPF" name="txtCPFCadastro" placeholder="CPF" required>
                             <h3 class="alertMessage" id="txtAlert">CPF Invalido!</h3>
                         </div>
                     </div>
@@ -83,20 +83,20 @@
                     <div class="form-group">
                         <label for="txtEmailCadastro" class="col-sm-2 control-label" >Data de Nascimento</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="txtNasc" name="txtDataNascimento" placeholder="dd/mm/aaaaa">
+                            <input type="text" class="form-control" id="txtNasc" name="txtDataNascimento" placeholder="dd/mm/aaaaa" required>
                         </div>
                     </div>
                     
                     <div class="form-group">
                         <label for="txtSenhaCadastro" class="col-sm-2 control-label">Senha</label>
                         <div class="col-sm-10">
-                            <input type="password" class="form-control" name="txtSenhaCadastro" placeholder="Senha">
+                            <input type="password" class="form-control" name="txtSenhaCadastro" placeholder="Senha" required>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="txtSenha" class="col-sm-2 control-label">Repita a senha</label>
                         <div class="col-sm-10">
-                            <input type="password" class="form-control" name="txtConfirmaSenhaCadastro" placeholder="Repita a senha">
+                            <input type="password" class="form-control" name="txtConfirmaSenhaCadastro" placeholder="Repita a senha" required>
                         </div>                       
                     </div>
                     <div class="form-group">

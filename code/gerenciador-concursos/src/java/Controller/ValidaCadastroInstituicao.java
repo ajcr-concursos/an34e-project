@@ -25,6 +25,7 @@ import javax.servlet.http.HttpSession;
  */
 @WebServlet(name = "ValidaCadastroInstituicao", urlPatterns = {"/ValidaCadastroInstituicao"})
 public class ValidaCadastroInstituicao extends HttpServlet {
+
     /**
      * Handles the HTTP <code>POST</code> method.
      *
@@ -39,25 +40,30 @@ public class ValidaCadastroInstituicao extends HttpServlet {
         String nome = request.getParameter("txtNomeCadastroInstituicao");
         String email = request.getParameter("txtEmailCadastroInstituicao");
         String senha = request.getParameter("txtSenhaCadastroInstituicao");
-        String CNPJ = request.getParameter("txtCNPJCadastro");
-        String rua = request.getParameter("txtRuaInstituicao");
-        String bairro = request.getParameter("txtBairroInstituicao");
-        String numero = request.getParameter("txtNumeroInstituicao");
-        CNPJ = Util.desformCNPJ(CNPJ);
-        Instituicao inst = new Instituicao();
-        inst.setNome(nome);
-        inst.setCNPJ(CNPJ);
-        inst.setSenha(senha);
-        inst.setEmail(email);
-        inst.setRua(rua);
-        inst.setBairro(bairro);
-        inst.setNumero(numero);
-        InstituicaoDAO dao = new InstituicaoDAO();
-        dao.insert(inst);
-        HttpSession session = request.getSession();
-        session.setAttribute("sessionEmpresa", inst);
-        response.sendRedirect("./Inicio");
-        
+        String confirmaSenha = request.getParameter("txtConfirmaSenhaCadastroInstituicao");
+        if (senha.equals(confirmaSenha) == false) {
+            response.sendRedirect("./Login");
+        } else {
+            String CNPJ = request.getParameter("txtCNPJCadastro");
+            String rua = request.getParameter("txtRuaInstituicao");
+            String bairro = request.getParameter("txtBairroInstituicao");
+            String numero = request.getParameter("txtNumeroInstituicao");
+            CNPJ = Util.desformCNPJ(CNPJ);
+            Instituicao inst = new Instituicao();
+            inst.setNome(nome);
+            inst.setCNPJ(CNPJ);
+            inst.setSenha(senha);
+            inst.setEmail(email);
+            inst.setRua(rua);
+            inst.setBairro(bairro);
+            inst.setNumero(numero);
+            InstituicaoDAO dao = new InstituicaoDAO();
+            dao.insert(inst);
+            HttpSession session = request.getSession();
+            session.setAttribute("sessionEmpresa", inst);
+            response.sendRedirect("./Inicio");
+        }
+
     }
 
     /**

@@ -11,7 +11,7 @@ package BD;
  */
 public class ConfiguracaoBD {
     public static final String USUARIO = "root";
-    public static final String SENHA = "1234";
+    public static final String SENHA = "49618";
     public static final String URL = "jdbc:mysql://127.0.0.1:3306/gerenciaconcurso";
     public static final String DRIVER = "com.mysql.jdbc.Driver";
 }

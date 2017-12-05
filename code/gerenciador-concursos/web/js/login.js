@@ -11,7 +11,7 @@ $("document").ready(function(){
 	});
         $("#txtNasc").mask('00/00/0000');
         
-        $("#txtCPF").mask('000.000.000-00');
+        $("#txtCPF").mask('000.000.000-00',{reverse:true});
 
         $("#txtCNPJ").mask('00.000.000/0000-00');
 });

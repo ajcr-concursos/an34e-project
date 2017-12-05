@@ -49,12 +49,8 @@
                     </thead>
                     <%
                         try {
-                            Class.forName("com.mysql.jdbc.Driver");
-                            String url = "jdbc:mysql://localhost:3306/gerenciaconcurso";
-                            String username = "root";
-                            String password = "1234";
                             String query = "select * from concurso order by nome";
-                            Connection conn = DriverManager.getConnection(url, username, password);
+                            Connection conn = new BD.BancoDados().getConnection();
                             Statement stmt = conn.createStatement();
                             ResultSet rs = stmt.executeQuery(query);
                             while (rs.next()) {
