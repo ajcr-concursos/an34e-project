@@ -7,8 +7,11 @@ package Model;
 
 import BD.BancoDados;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
+import java.sql.ResultSet;
 
 /**
  *
@@ -23,10 +26,48 @@ public class BuscarConcursoDAO {
     public List<Concurso> select(){
         List<Concurso> lst = new ArrayList<>();
         String sql = "select * from concurso";
-        try(){
-            
+        
+        try(PreparedStatement st = this.con.prepareStatement(sql)){
+            ResultSet rs = st.executeQuery();
+            while(rs.next()){
+                Concurso conc = new Concurso();
+                conc.setId(rs.getInt("c.id"));
+                conc.setNome(rs.getString("c.nome"));
+                conc.setQtdVagas(rs.getInt("c.qtd_vagas"));
+                Calendar calendario = Calendar.getInstance();
+                calendario.setTime(rs.getDate("c.data_prova"));
+                conc.setDataProva(calendario);
+                lst.add(conc);;
+               
+            }
+            return lst;
         }catch(Exception err){
             System.out.println(err.getMessage());
+            return null;
+        }
+    }
+    
+        public List<Concurso> select(String area){
+        List<Concurso> lst = new ArrayList<>();
+        String sql = "select * from concurso join area  ubsing(id) where area.nome = ?";
+        try(PreparedStatement st = this.con.prepareStatement(sql)){
+            st.setString(1, area);
+            ResultSet rs = st.executeQuery();
+            while(rs.next()){
+                Concurso conc = new Concurso();
+                conc.setId(rs.getInt("c.id"));
+                conc.setNome(rs.getString("c.nome"));
+                conc.setQtdVagas(rs.getInt("c.qtd_vagas"));
+                Calendar calendario = Calendar.getInstance();
+                calendario.setTime(rs.getDate("c.data_prova"));
+                conc.setDataProva(calendario);
+                lst.add(conc);;
+               
+            }
+            return lst;
+        }catch(Exception err){
+            System.out.println(err.getMessage());
+            return null;
         }
     }
 }

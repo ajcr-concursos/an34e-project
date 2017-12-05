@@ -38,6 +38,7 @@ public class CadastraConcurso extends HttpServlet {
         int qtdVagas = Integer.parseInt(request.getParameter("txtQtdVagas"));
         Calendar dataProva = Util.ValidaDataNascimento(request.getParameter("txtDataProva"));
         String area = request.getParameter("txtArea");
+        System.out.println("area do concurso "+ area +"\nnome Concurso "+ nome);
         Concurso c = new Concurso();
         c.setEmpresa((Instituicao)session.getAttribute("sessionEmpresa"));
         c.setNome(nome);
@@ -46,7 +47,7 @@ public class CadastraConcurso extends HttpServlet {
         ConcursoDAO cDao = new ConcursoDAO();
         cDao.insert(c);
         //area e o nome da area utilizada para dar insert em area concurso;
-        cDao.insertAreaConcurso(c.getNome(), area);
+        cDao.insertAreaConcurso(nome, area);
         response.sendRedirect("./MeusConcursos");
     }
 

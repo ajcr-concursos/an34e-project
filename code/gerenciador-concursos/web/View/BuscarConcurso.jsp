@@ -19,26 +19,28 @@
         <jsp:include page="Shared/Nav.jsp"/>
         <div class="container">
             <h2>Buscar Concursos</h2>
-            
+            <form action="btnBuscar" method="POST">
                 <div class="row ">
                     <div class="col-sm-6 text-left"></div>
                     <div class="col-sm-6 text-right">
-                        <button class="btn btn-primary" id="btnBuscar" name="btnBucar"> <span class="glyphicon glyphicon-zoom-in"> </span>Buscar</button>
+                        <button class="btn btn-primary" id="btnBuscar" name="btnBuscar"> <span class="glyphicon glyphicon-zoom-in"> </span>Buscar</button>
                     </div>
                 </div>
-            <div>
-                <h4>Escolha as areas de seu interesse</h4>
-            </div>
-            <div>
-                <select name="txtInteresse" id="txtAreaId" class="form-control selecao" >
-                    <option class="form-control selecao" value="">Geral (todas as areas)</option>
-                    <option class="form-control selecao" value=eletrica">Eletrica</option>
-                    <option class="form-control selecao" value="mecanica">Mecanica</option>
-                    <option class="form-control selecao" value="Administracao">Administração </option>
-                    <option class="form-control selecao" value="computacao">Computação</option>
-                    <option class="form-control selecao" value="direito">Direito</option>
-                </select>
-            </div>
+
+                <div>
+                    <h4>Escolha as areas de seu interesse</h4>
+                </div>
+                <div>
+                    <select name="txtInteresse" id="txtAreaId" class="form-control selecao" >
+                        <option class="form-control selecao" value="geral">Geral (todas as areas)</option>
+                        <option class="form-control selecao" value=eletrica">Eletrica</option>
+                        <option class="form-control selecao" value="mecanica">Mecanica</option>
+                        <option class="form-control selecao" value="Administracao">Administração </option>
+                        <option class="form-control selecao" value="computacao">Computação</option>
+                        <option class="form-control selecao" value="direito">Direito</option>
+                    </select>
+                </div>
+            </form>
            <form method="post" action="./CadastraConcurso">
                 <table class="table table-hover">
                     <thead class="thead-inverse">
@@ -54,18 +56,16 @@
                             </th>
                     
 
-                            <th>Opções</th>
+                           
                         </tr>
                     </thead>
                 
                     <tbody>
-                        <c:forEach items="${lstConcursos}" var="item" >
+                        <c:forEach items="${lstBusca}" var="item" >
                         <tr>
                             <td>${item.nome}</td>
                             <td>${item.qtdVagas} vaga(s)</td>
                             <td>${item.dataProva.getTime()}</td>
-                            
-                            <td><a href=""><input type="submit" class="btn btn-default" value="Veja Mais"/></td>
                         </tr>
                         </c:forEach>
                     </tbody>

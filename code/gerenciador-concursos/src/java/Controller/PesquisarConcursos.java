@@ -3,12 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package View;
+package Controller;
 
 import Model.BuscarConcursoDAO;
 import Model.Concurso;
-import Model.ConcursoDAO;
-import Model.Instituicao;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
@@ -24,8 +22,8 @@ import javax.servlet.http.HttpSession;
  *
  * @author Jean
  */
-@WebServlet(name = "BuscarConcurso", urlPatterns = {"/BuscarConcurso"})
-public class BuscarConcurso extends HttpServlet {
+@WebServlet(name = "PesquisarConcursos", urlPatterns = {"/PesquisarConcursos"})
+public class PesquisarConcursos extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -38,16 +36,21 @@ public class BuscarConcurso extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession();
-        if (session.getAttribute("sessionCandidato") != null) {
-            RequestDispatcher rd = request.getRequestDispatcher("View/BuscarConcurso.jsp");
-            rd.forward(request, response);
-        } else {
-            response.sendRedirect("./Inicio");
+         List<Concurso> lstConcursos;
+        if(session.getAttribute("sessionCandidato") != null){
+            String busca = request.getParameter("txtInteresse");
+            if(busca.equals("geral")){
+               lstConcursos = new BuscarConcursoDAO().select(); 
+            }else{
+                lstConcursos = new BuscarConcursoDAO().select(busca);
+            }
+            session.setAttribute("lstBusca", lstConcursos);
+            
         }
-
+        
     }
-
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
      * Handles the HTTP <code>GET</code> method.
