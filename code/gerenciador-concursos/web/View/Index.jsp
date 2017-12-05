@@ -31,12 +31,9 @@
                     <form method="post">
                             <%
                                 try {
-                                    Class.forName("com.mysql.jdbc.Driver");
-                                    String url = "jdbc:mysql://localhost:3306/gerenciaconcurso";
-                                    String username = "root";
-                                    String password = "49618";
+                                    
                                     String query = "select nome from concurso";
-                                    Connection conn = DriverManager.getConnection(url, username, password);
+                                    Connection conn = new BD.BancoDados().getConnection();
                                     Statement stmt = conn.createStatement();
                                     ResultSet rs = stmt.executeQuery(query);
                                     while (rs.next()) {
@@ -61,12 +58,8 @@
                     <form method="post">
                             <%
                                 try {
-                                    Class.forName("com.mysql.jdbc.Driver");
-                                    String url = "jdbc:mysql://localhost:3306/gerenciaconcurso";
-                                    String username = "root";
-                                    String password = "49618";
                                     String query = "select nome from empresa";
-                                    Connection conn = DriverManager.getConnection(url, username, password);
+                                    Connection conn = new BD.BancoDados().getConnection();
                                     Statement stmt = conn.createStatement();
                                     ResultSet rs = stmt.executeQuery(query);
                                     while (rs.next()) {
@@ -91,12 +84,8 @@
                     <form method="post">
                             <%
                                 try {
-                                    Class.forName("com.mysql.jdbc.Driver");
-                                    String url = "jdbc:mysql://localhost:3306/gerenciaconcurso";
-                                    String username = "root";
-                                    String password = "49618";
                                     String query = "select nome from area";
-                                    Connection conn = DriverManager.getConnection(url, username, password);
+                                    Connection conn = new BD.BancoDados().getConnection();
                                     Statement stmt = conn.createStatement();
                                     ResultSet rs = stmt.executeQuery(query);
                                     while (rs.next()) {

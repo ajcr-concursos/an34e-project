@@ -49,8 +49,6 @@ public class ValidaCadastro extends HttpServlet {
 //            out.println("</html>");
 //        }
 //    }
-
-
     /**
      * Handles the HTTP <code>POST</code> method.
      *
@@ -65,21 +63,26 @@ public class ValidaCadastro extends HttpServlet {
         String nome = request.getParameter("txtNomeCadastro");
         String email = request.getParameter("txtEmailCadastro");
         String senha = request.getParameter("txtSenhaCadastro");
-        String CPF = request.getParameter("txtCPFCadastro");
-        CPF = Util.desformCPF(CPF);
-        Calendar dataNasc = Util.ValidaDataNascimento( request.getParameter("txtDataNascimento"));
-        
-        Candidato c = new Candidato();
-        c.setNome(nome);
-        c.setCPF(CPF);
-        c.setSenha(senha);
-        c.setEmail(email);
-        c.setDataNascimento(dataNasc);
-        CandidatoDAO dao = new CandidatoDAO();
-        dao.insert(c);
-        HttpSession session = request.getSession();
-        session.setAttribute("sessionCandidato", c);
-        response.sendRedirect("./Inicio");
+        String confirmaSenha = request.getParameter("txtConfirmaSenhaCadastro");
+        if (senha.equals(confirmaSenha) == false) {
+            response.sendRedirect("./Login");
+        } else {
+            String CPF = request.getParameter("txtCPFCadastro");
+            CPF = Util.desformCPF(CPF);
+            Calendar dataNasc = Util.ValidaDataNascimento(request.getParameter("txtDataNascimento"));
+
+            Candidato c = new Candidato();
+            c.setNome(nome);
+            c.setCPF(CPF);
+            c.setSenha(senha);
+            c.setEmail(email);
+            c.setDataNascimento(dataNasc);
+            CandidatoDAO dao = new CandidatoDAO();
+            dao.insert(c);
+            HttpSession session = request.getSession();
+            session.setAttribute("sessionCandidato", c);
+            response.sendRedirect("./Inicio");
+        }
     }
 
     /**
