@@ -8,6 +8,7 @@
 <%@ page import="java.sql.ResultSet" %>
 <%@ page import="java.sql.Statement" %>
 <%@ page import="java.sql.Connection" %>
+<%@ page import="java.sql.DriverManager" %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -57,7 +58,7 @@
                     <form method="post">
                             <%
                                 try {
-                                    String query = "select nome from concurso";
+                                    String query = "select nome from empresa";
                                     Connection conn = new BD.BancoDados().getConnection();
                                     Statement stmt = conn.createStatement();
                                     ResultSet rs = stmt.executeQuery(query);
@@ -83,7 +84,7 @@
                     <form method="post">
                             <%
                                 try {
-                                    String query = "select nome from concurso";
+                                    String query = "select nome from area";
                                     Connection conn = new BD.BancoDados().getConnection();
                                     Statement stmt = conn.createStatement();
                                     ResultSet rs = stmt.executeQuery(query);

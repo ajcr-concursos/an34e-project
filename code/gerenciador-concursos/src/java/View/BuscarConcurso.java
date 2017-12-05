@@ -42,10 +42,10 @@ public class BuscarConcurso extends HttpServlet {
         HttpSession session = request.getSession();
         try{
             Instituicao i =(Instituicao) session.getAttribute("sessionEmpresa");
-            List<Concurso> lstConcursos = new ConcursoDAO().getTodosConcursos();
-            request.setAttribute("lstConcursos", lstConcursos);
+            //List<Concurso> lstConcursos = new ConcursoDAO().getTodosConcursos();
+            //request.setAttribute("lstConcursos", lstConcursos);
             RequestDispatcher rd = request.getRequestDispatcher("View/BuscarConcurso.jsp");
-            System.out.println(lstConcursos.size());
+            //System.out.println(lstConcursos.size());
             rd.forward(request, response);
         }catch(Exception i){
             System.out.println(i);
