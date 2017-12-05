@@ -22,10 +22,10 @@ import javax.servlet.http.HttpSession;
 
 /**
  *
- * @author Jean
+ * @author Rafael Andrade
  */
-@WebServlet(name = "BuscarConcurso", urlPatterns = {"/BuscarConcurso"})
-public class BuscarConcurso extends HttpServlet {
+@WebServlet(name = "SeInscreva", urlPatterns = {"/SeInscreva"})
+public class SeInscreva extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -39,18 +39,18 @@ public class BuscarConcurso extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        HttpSession session = request.getSession();
-        try{
-            Instituicao i =(Instituicao) session.getAttribute("sessionEmpresa");
-            List<Concurso> lstConcursos = new ConcursoDAO().getTodosConcursos();
-            request.setAttribute("lstConcursos", lstConcursos);
-            RequestDispatcher rd = request.getRequestDispatcher("View/BuscarConcurso.jsp");
-            System.out.println(lstConcursos.size());
-            rd.forward(request, response);
-        }catch(Exception i){
-            System.out.println(i);
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet SeInscreva</title>");
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet SeInscreva at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
         }
-
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -80,6 +80,16 @@ public class BuscarConcurso extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        HttpSession session = request.getSession();
+        if (session.getAttribute("sessionCandidato") != null) {
+            Candidato c = (Candidato) session.getAttribute("sessionCandidato");
+            List<Concurso> lstConcursos = new ConcursoDAO().getConcursosCandidato(c);
+            request.setAttribute("lstConcursos", lstConcursos);
+            RequestDispatcher rd = request.getRequestDispatcher("View/MeusConcursos.jsp");
+            rd.forward(request, response);
+        } else {
+            response.sendRedirect("./Inicio");
+        }
     }
 
     /**

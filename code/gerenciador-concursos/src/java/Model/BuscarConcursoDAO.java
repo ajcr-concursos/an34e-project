@@ -23,11 +23,12 @@ public class BuscarConcursoDAO {
     public List<Concurso> select(){
         List<Concurso> lst = new ArrayList<>();
         String sql = "select * from concurso";
-        try(){
+        try{
             
         }catch(Exception err){
             System.out.println(err.getMessage());
         }
+        return null;
     }
 */
 }

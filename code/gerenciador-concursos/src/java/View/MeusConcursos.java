@@ -40,8 +40,14 @@ public class MeusConcursos extends HttpServlet {
             request.setAttribute("lstConcursos", lstConcursos);
             RequestDispatcher rd = request.getRequestDispatcher("View/MeusConcursos.jsp");
             rd.forward(request, response);
+        }else if(session.getAttribute("sessionCandidato") != null){
+            Candidato c =(Candidato) session.getAttribute("sessionCandidato");
+            List<Concurso> lstConcursos = new ConcursoDAO().getConcursosCandidato(c);
+            request.setAttribute("lstConcursos", lstConcursos);
+            RequestDispatcher rd = request.getRequestDispatcher("View/MeusConcursos.jsp");
+            rd.forward(request, response);
         }else{
-            response.sendRedirect("./Inicio");
+           response.sendRedirect("./Inicio"); 
         }
 
     }
