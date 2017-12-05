@@ -19,7 +19,7 @@ public class BuscarConcursoDAO {
     public BuscarConcursoDAO(){
         con = new BancoDados().getConnection();
     }
-    
+    /*
     public List<Concurso> select(){
         List<Concurso> lst = new ArrayList<>();
         String sql = "select * from concurso";
@@ -29,4 +29,5 @@ public class BuscarConcursoDAO {
             System.out.println(err.getMessage());
         }
     }
+*/
 }
