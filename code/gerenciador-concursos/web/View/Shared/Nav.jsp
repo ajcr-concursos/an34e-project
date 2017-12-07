@@ -15,24 +15,35 @@
             </div>
         </div>
         <ul class="nav navbar-nav">
-            <li>
-                <a id="btnCadastroProjeto" href="./MeusConcursos">
-                    Meus Concursos
-                </a>
-            </li>
-            <li>
-                <a id="btnListarProjetos" href="./Empresas">
-                    Empresas
-                </a>
-            </li>
+            <c:choose>
+                <c:when test="${sessionScope.sessionCandidato != null && sessionScope.sessionEmpresa == null}">
+                    <li>
+                        <a id="btnListarProjetos" href="./Empresas">
+                            Empresas
+                        </a>
+                    </li>
+                    <li>
+                        <a id="btnCadastroProjeto" href="./BuscarConcurso">
+                            Concursos
+                        </a>
+                    </li>
+                    <li>
+                        <a id="btnMinhasInscricoes" href="./MinhasInscricoes">
+                            Minhas inscrições
+                        </a>
+                    </li>
+                </c:when>
+                <c:otherwise>
+                    <li>
+                        <a id="btnCadastroProjeto" href="./MeusConcursos">
+                            Meus Concursos
+                        </a>
+                    </li>
+                </c:otherwise>
+            </c:choose>
             <li>
                 <a id="btnListarProjetos" href="./Perfil">
                     Meu Perfil
-                </a>
-            </li>
-            <li>
-                <a id="btnCadastroProjeto" href="./BuscarConcurso">
-                    Concursos
                 </a>
             </li>
         </ul
