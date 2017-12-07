@@ -23,7 +23,6 @@
     <body>
         <jsp:include page="Shared/Nav.jsp"/>
         <div class="container">
-<<<<<<< HEAD
             <h2>Buscar Concursos</h2>
             <form action="btnBuscar" method="POST">
                 <div class="row ">
@@ -47,16 +46,7 @@
                     </select>
                 </div>
             </form>
-           <form method="post" action="./CadastraConcurso">
-=======
-            <h2>Concursos Disponiveis</h2>
-            <br></br>
-            <br></br>
-            <div class="row ">
-                <div class="col-sm-6 text-left"></div>
-            </div>
-            <form method="post" action="./SeInscreva">
->>>>>>> d42c10b653821791f4bbf008f91e4c4bde62d47c
+
                 <table class="table table-hover">
                     <thead class="thead-inverse">
                         <tr>
@@ -83,22 +73,14 @@
                             while (rs.next()) {
                     %>
                     <tbody>
-<<<<<<< HEAD
-                        <c:forEach items="${lstBusca}" var="item" >
-                        <tr>
-                            <td>${item.nome}</td>
-                            <td>${item.qtdVagas} vaga(s)</td>
-                            <td>${item.dataProva.getTime()}</td>
-=======
-                    <c:forEach items="${lstConcursos}" var="item" >
+
                         <tr>
                             <td><%out.println(rs.getString("nome")); %></td>
                             <td><%out.println(rs.getString("qtd_vagas")); %></td>
                             <td><%out.println(rs.getString("data_prova")); %></td>
-                            <td><a href="./SeIncreva"><button class="btn btn-primary" id="btnBuscar" name="btnInscricao"></span>Inscreva-se</button></a></td>
->>>>>>> d42c10b653821791f4bbf008f91e4c4bde62d47c
+                            <td><a href="./SeInscreva?idConcurso=<%=rs.getInt("id")%>"><button class="btn btn-primary" id="btnBuscar" name="btnInscricao"></span>Inscreva-se</button></a></td>
+
                         </tr>
-                    </c:forEach>
                     <%
                         }
                     %>
@@ -112,7 +94,7 @@
                         }
                     %>
                 </table>
-            </form>
+            
         </div>
         <jsp:include page="Shared/Footer.jsp"/>
     </body>

@@ -8,6 +8,8 @@ package View;
 import Model.Candidato;
 import Model.Concurso;
 import Model.ConcursoDAO;
+import Model.Inscricao;
+import Model.InscricaoDAO;
 import Model.Instituicao;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -62,11 +64,7 @@ public class SeInscreva extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
+
 
     /**
      * Handles the HTTP <code>POST</code> method.
@@ -77,16 +75,20 @@ public class SeInscreva extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
         HttpSession session = request.getSession();
         if (session.getAttribute("sessionCandidato") != null) {
             Candidato c = (Candidato) session.getAttribute("sessionCandidato");
-            List<Concurso> lstConcursos = new ConcursoDAO().getConcursosCandidato(c);
-            request.setAttribute("lstConcursos", lstConcursos);
-            RequestDispatcher rd = request.getRequestDispatcher("View/MeusConcursos.jsp");
-            rd.forward(request, response);
+            int idConcurso = Integer.parseInt(request.getParameter("idConcurso"));
+            Concurso con = new Concurso();
+            con.setId(idConcurso);
+            InscricaoDAO dao = new InscricaoDAO();
+            Inscricao i = new Inscricao();
+            i.setCandidato(c);
+            i.setConcurso(con);
+            dao.insert(i);
+            response.sendRedirect("./MeusConcursos");
         } else {
             response.sendRedirect("./Inicio");
         }
