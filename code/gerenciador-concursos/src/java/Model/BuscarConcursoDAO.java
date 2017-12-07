@@ -49,7 +49,7 @@ public class BuscarConcursoDAO {
     
         public List<Concurso> select(String area){
         List<Concurso> lst = new ArrayList<>();
-        String sql = "select * from concurso, area_concurso where concurso.id = area_concurso.id_area";
+        String sql = "select * from concurso, area_concurso where concurso.id = area_concurso.id_area ";
         try(PreparedStatement st = this.con.prepareStatement(sql)){
             st.setString(1, area);
             ResultSet rs = st.executeQuery();
