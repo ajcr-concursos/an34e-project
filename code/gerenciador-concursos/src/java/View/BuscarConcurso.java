@@ -36,14 +36,14 @@ public class BuscarConcurso extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         HttpSession session = request.getSession();
         try{
-            Instituicao i =(Instituicao) session.getAttribute("sessionEmpresa");
-            //List<Concurso> lstConcursos = new ConcursoDAO().getTodosConcursos();
-            //request.setAttribute("lstConcursos", lstConcursos);
+            String nome = request.getParameter("txtNome");
+            List<Concurso> lstConcursos = new ConcursoDAO().getConcursos(nome);
+            request.setAttribute("lstConcursos", lstConcursos);
+            //Instituicao i =(Instituicao) session.getAttribute("sessionEmpresa");
             RequestDispatcher rd = request.getRequestDispatcher("View/BuscarConcurso.jsp");
-            //System.out.println(lstConcursos.size());
             rd.forward(request, response);
-        }catch(Exception i){
-            System.out.println(i);
+        }catch(Exception err){
+            System.out.println(err.getMessage());
         }
 
     }
@@ -63,19 +63,6 @@ public class BuscarConcurso extends HttpServlet {
         processRequest(request, response);
     }
 
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
 
     /**
      * Returns a short description of the servlet.

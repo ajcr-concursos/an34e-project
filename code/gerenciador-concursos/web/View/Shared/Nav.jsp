@@ -32,6 +32,7 @@
                             Minhas inscrições
                         </a>
                     </li>
+
                 </c:when>
                 <c:otherwise>
                     <li>
@@ -46,7 +47,7 @@
                     Meu Perfil
                 </a>
             </li>
-        </ul
+        </ul>
         <ul class="nav navbar-nav">
             <ul class="nav navbar-nav navbar-right">
                 <li class="nav-registration">

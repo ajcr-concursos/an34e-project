@@ -10,6 +10,7 @@ import BD.BancoDados;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Types;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -115,7 +116,7 @@ public class ConcursoDAO {
             return null;
         }
     }
-    public List<Concurso> getConcursos(String area){
+    public List<Concurso> getConcursosPorArea(String area){
         List<Concurso> lst = new ArrayList<>();
         String sql = "select * from concurso, area, area_concurso where area.id = area_concurso.id_area and concurso.id = area_concurso.id_concurso and area.nome like ?";
         try(PreparedStatement st = this.con.prepareStatement(sql)){
@@ -158,7 +159,37 @@ public class ConcursoDAO {
              return null;
          }
      }
-    
+    public List<Concurso> getConcursos(String nome){
+        List<Concurso> lst = new ArrayList<>();
+        String sql = "select * from concurso";
+        if(nome != null) {
+            if(!nome.equals(""))
+                sql +=  " where nome like ?";
+        }
+        try(PreparedStatement st = this.con.prepareStatement(sql)){
+            //st.setNull(1, Types.VARCHAR);
+            if(nome!= null){
+                if(!nome.equals(""))
+                    st.setString(1, "%"+nome+"%");
+            }
+            ResultSet rs = st.executeQuery();
+            while(rs.next()){
+                Concurso c = new Concurso();
+                c.setId(rs.getInt("id"));
+                c.setNome(rs.getString("nome"));
+                c.setQtdVagas(rs.getInt("qtd_vagas"));
+                Calendar calendario = Calendar.getInstance();
+                calendario.setTime(rs.getDate("data_prova"));
+                c.setDataProva(calendario);
+                lst.add(c);
+            }
+            return lst;
+        }catch(Exception err){
+            System.out.println(err.getMessage());
+            return null;
+        }
+        
+    }
 }
 
 
